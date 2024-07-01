@@ -16,17 +16,17 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Place: 大氣B105 
 - Requirements: basic knowledge in calculus and programming skills
 - Office hours: by appointment
-- Grading (100%): homework assignments (55%); final exam (xx%); midterm exam (xx%); class interaction (xx%)
-- Course website: [here](https://yuchiaol.github.io/ntuas_ode_linear_algebra/docs/index.html) 
+- Grading (100%): homework assignments (50%); final exam (25%); midterm exam (20%); class interaction (5%)
+- Course website: [here](https://yuchiaol.github.io/math1_2024/docs/index.html) 
 
 ## Teaching assistants
 - Yih Wang (王逸)
 - Shih-Ni Zhou (周詩倪)
-- Jui-Jiun Lin (林瑞均)
+- Yi-An Feng (馮以安)
 - Ya-Fan Chung (鍾雅帆)
 
 ## Course description
-This course gives students overviews of linear first and second order ordinary differential equations (OEDs) and linear algebra. The math skills will be applied to atmospheric sciences problems.
+This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic nermical methods for solving ODE nermically will also be introduced. The math skills will be applied to atmospheric sciences problems.
 
 First order ODEs:
 - responses to (complex) exponential, oscillating, delta and step function inputs
@@ -77,6 +77,8 @@ Solving linear system:
 - matrix exponential
 - phase plane: source, sink, saddle
 
+Numerical nethods:
+- xxx
 
 ## Textbooks and videos
 Differential Equations and Linear Algebra:
