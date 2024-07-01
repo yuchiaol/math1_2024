@@ -16,7 +16,7 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Place: 大氣B105 
 - Requirements: basic knowledge in calculus and programming skills
 - Office hours: by appointment
-- Grading (100%): homework assignments (xx%); final exam (xx%); midterm exam (xx%); class interaction (xx%)
+- Grading (100%): homework assignments (55%); final exam (xx%); midterm exam (xx%); class interaction (xx%)
 - Course website: [here](https://yuchiaol.github.io/ntuas_ode_linear_algebra/docs/index.html) 
 
 ## Teaching assistants
