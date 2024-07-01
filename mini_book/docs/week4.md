@@ -24,7 +24,7 @@ kernelspec:
 \Longrightarrow x''+ \frac{c}{m}x'+ \frac{k}{m}x=0
 \end{eqnarray*}
 
-```{figure} /_static/figures/car_ode.jpeg
+```{figure} /_static/figures/diff_tmp_plot.jpg
 :scale: 10%
 :name: car
 ```
