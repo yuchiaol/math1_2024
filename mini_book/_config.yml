@@ -1,0 +1,49 @@
+title : NTUAS ODE and Linear Algebra
+author: Yu-Chiao Liang
+logo: 'qe-logo-large.png'
+
+# Short description about the book
+description: >-
+  An introduction for ODEs and linear algebra
+
+execute:
+  execute_notebooks           : cache
+
+# HTML-specific settings
+html:
+  home_page_in_navbar         : false
+
+# Interact link settings
+notebook_interface            : "notebook"
+
+# Launch button settings
+repository:
+  url                         : https://github.com/executablebooks/quantecon-mini-example
+  path_to_book                : "mini_book"
+
+binder:
+  binderhub_url               : "https://mybinder.org"
+  text                        : "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+     targetname: book.tex
+
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
+    - sphinx_togglebutton
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath

@@ -1,0 +1,11 @@
+format: jb-article
+root: docs/index
+sections:
+- file: docs/week1
+- file: docs/week2
+- file: docs/week3
+- file: docs/week4
+- file: docs/week5
+- file: docs/week6
+- file: docs/week7
+- file: docs/week8

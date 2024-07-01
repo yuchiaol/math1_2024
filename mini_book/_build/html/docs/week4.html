@@ -1,0 +1,711 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week4 - fundamental equation of mechanics &#8212; NTUAS ODE and Linear Algebra</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/week4';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week5 - method of undetermined coefficients" href="week5.html" />
+    <link rel="prev" title="Week3 - integrating factor" href="week3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week1.html">Week1 - overview of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Week2 - responses to inputs &amp; complexify</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Week3 - integrating factor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week4 -  fundamental equation of mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Week5 - method of undetermined coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Week6 - exponential response formula (ERF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week7.html">Week7 - variation of parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week8.html">Week8 - Columns and rows of matrix A</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/week4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week4 -  fundamental equation of mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-homogeneous-odes">Second order linear (homogeneous) ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case1-two-real-roots-overdamping">Case1: two real roots (overdamping)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case2-two-equal-roots-critical-damping">Case2: two equal roots (critical damping)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-complex-roots-undamped-underdamped">Case 3: complex roots (undamped/underdamped)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-between-electrical-and-spring-dash-pot-system">Similarity between electrical and spring-dash pot system</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="week4-fundamental-equation-of-mechanics">
+<span id="week4"></span><h1>Week4 -  fundamental equation of mechanics<a class="headerlink" href="#week4-fundamental-equation-of-mechanics" title="Permalink to this heading">#</a></h1>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+&amp;mx''&amp; = &amp;-kx&amp; - &amp;cx'&amp;\\
+&amp;\uparrow&amp; &amp;\uparrow&amp; &amp;\uparrow&amp;\\
+&amp;\text{Force (Newton)}&amp; &amp;\text{spring (Hooke)}&amp; &amp;\text{dash pot/damping}&amp;
+\end{eqnarray*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\Longrightarrow mx''+cx'+kx=0\\\\
+\Longrightarrow x''+ \frac{c}{m}x'+ \frac{k}{m}x=0
+\end{eqnarray*}\]</div>
+<figure class="align-default" id="car">
+<a class="reference internal image-reference" href="_static/figures/car_ode.jpeg"><img alt="_static/figures/car_ode.jpeg" src="_static/figures/car_ode.jpeg" /></a>
+</figure>
+<section id="second-order-linear-homogeneous-odes">
+<h2>Second order linear (homogeneous) ODEs<a class="headerlink" href="#second-order-linear-homogeneous-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>to find two independent solutions (homogeneous solutions)</p></li>
+<li><p>general form:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{d^{2}y}{dt^{2}}+A\frac{dy}{dt}+By=0, \text{ given } y(0)=1, y'(0)=0.
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>basic method guess and plug in the exponential solution:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\text{try } y(t)&amp;=&amp;e^{rt}\\\\ 
+\rightarrow r^{2}e^{rt} + Are^{rt} &amp;+&amp; Be^{rt} = 0\\\\
+\rightarrow r^{2} + Ar &amp;+&amp; B = 0 \text{ characteristic equation}.
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>we can solve r:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r=\frac{-A\pm \sqrt{A^{2}-4B}}{2}
+\end{eqnarray*}\]</div>
+</section>
+<section id="case1-two-real-roots-overdamping">
+<h2>Case1: two real roots (overdamping)<a class="headerlink" href="#case1-two-real-roots-overdamping" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r_{1} \neq r_{2} \rightarrow y(t)=c_{1}e^{r_{1}t}+c_{2}e^{r_{2}t}
+\end{eqnarray*}\]</div>
+<div class="proof example admonition" id="my-example1">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y''+4y'+3y=0, y(0)=1, y'(0)=0
+\end{eqnarray*}\]</div>
+<p>The characteristic equation is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r^{2}&amp;+&amp;4r+3=0\\\\
+&amp;\Longrightarrow&amp; (r+3)(r+1)=0 \rightarrow r=-3, -1\\\\
+&amp;\Longrightarrow&amp; y(t)=c_{1}e^{-3t}+c_{2}e^{-t}
+\end{eqnarray*}\]</div>
+<p>Use initial conditions</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(0)&amp;=&amp;1=c_{1}+c_{2}, \\\\
+y'(0)&amp;=&amp;0=-3c_{1}-c_{2}\\\\
+&amp;\Longrightarrow&amp; c_{1}=\frac{-1}{2}, c_{2}=\frac{3}{2}\\\\
+&amp;\Longrightarrow&amp; y(t)=\frac{-1}{2}e^{-3t}+\frac{3}{2}e^{-t}
+\end{eqnarray*}\]</div>
+</section>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Why the solutions are always “damped”? Can you link this result to the value of r?</p>
+</div>
+<ul class="simple">
+<li><p>the plot for possible solutions y(t):</p></li>
+</ul>
+<figure class="align-default" id="overdamp">
+<a class="reference internal image-reference" href="_static/figures/overdamp.png"><img alt="_static/figures/overdamp.png" src="_static/figures/overdamp.png" /></a>
+</figure>
+</section>
+<section id="case2-two-equal-roots-critical-damping">
+<h2>Case2: two equal roots (critical damping)<a class="headerlink" href="#case2-two-equal-roots-critical-damping" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r_{1} = r_{2} = -a \rightarrow (r+a)^{2}=0 \rightarrow r^{2}+2ar+a^{2}=0.
+\end{eqnarray*}\]</div>
+<p>So the ODE can be expressed as:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y''+2ay'+a^{2}y=0.
+\end{eqnarray*}\]</div>
+<p>Now we only have one solution:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t)=e^{-at}=y_{1}(t)
+\end{eqnarray*}\]</div>
+<p>But we need one more. Let’s try this:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\text{let } y_{2}(t)=u(t)y_{1}(t)\\\\
+a^{2}&amp;\times&amp; (y_{2} = ue^{-at})\\\\
+2a&amp;\times&amp; (y_{2}'=u(-ae^{-at}) +u'e^{-at})\\\\
+1&amp;\times&amp; (y_{2}''=a^{2}e^{-at}u-ae^{-at}u'-ae^{-at}u'+e^{-at}u'')\\\\
+&amp;\Longrightarrow&amp; 0 = 0 + 0 + e^{-at}u''\\\\
+&amp;\Longrightarrow&amp; u'' = 0 \rightarrow u'=c_{1} \rightarrow u(t) = c_{1}t+c_{2}.
+\end{eqnarray*}\]</div>
+<p>We take another solution and obtain the general solution:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y_{2}(t) &amp;=&amp; te^{-at}\\\\
+y(t) &amp;=&amp; Cy_{1}(t) + Dy_{2}(t) = Ce^{-at}+Dte^{-at}
+\end{eqnarray*}\]</div>
+</section>
+<section id="case-3-complex-roots-undamped-underdamped">
+<h2>Case 3: complex roots (undamped/underdamped)<a class="headerlink" href="#case-3-complex-roots-undamped-underdamped" title="Permalink to this heading">#</a></h2>
+<p>We get the complex solution</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y_{c}(t) = e^{(a+bi)t} = u + iv, \text{ where } u, v \in \mathbb{R}
+\end{eqnarray*}\]</div>
+<div class="proof theorem admonition" id="my-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>If u+iv is the complex solution to</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y''+Ay'+By = 0,
+\end{eqnarray*}\]</div>
+<p>where A and B are real. Then u and v are real solutions.</p>
+</section>
+</div><div class="proof dropdown admonition" id="proof">
+<p>Proof. Plug the complex solution into the ODE:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+(u+iv)'' + A(u+iv)' + B(u+iv) = 0\\\\
+\Longrightarrow (u''+Au'+Bu) + i(v''+Av'+Bv) = 0.
+\end{eqnarray*}\]</div>
+<p>The only way that this equation holds is the real part equal to zero and imaginary part equal to zero.
+So the linear combination of u and v is the general solution:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) = c_{1}u(t) + c_{2}v(t)
+\end{eqnarray*}\]</div>
+</div>
+<p>So the complex solution is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\tilde{y_c}(t) = e^{at+ibt}=e^{at}\cos{bt} + ie^{at}\sin{bt}.
+\end{eqnarray*}\]</div>
+<p>And the general solution is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) = e^{at}(c_{1}\cos{bt} + c_{2}\sin{bt})
+\end{eqnarray*}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>How about considering this complex solution</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y_{c}(t) = e^{at-ibt} \text{?}
+\end{eqnarray*}\]</div>
+<p>Can we obtain the same general solution? And why?</p>
+</div>
+<div class="proof example admonition" id="my-example2">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y''+4y'+5y=0, y(0)=1, y'(0)=0
+\end{eqnarray*}\]</div>
+<p>The characteristic equation is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r^{2}&amp;+&amp;4r+5=0\\\\
+&amp;\Longrightarrow&amp; r=\frac{-4\pm \sqrt{-4}}{2} = -2\pm i\\\\
+\end{eqnarray*}\]</div>
+<p>So the complex solution is:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+e^{(-2\pm i)t} \rightarrow e^{-2t}(\cos{t}\pm \sin{t})
+\end{eqnarray*}\]</div>
+<p>The general solution is therefore:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) &amp;=&amp; e^{-2t}(c_{1}\cos{t}+c_{2}\sin{t})\\\\
+y'(t) &amp;=&amp; -2e^{-2t}(c_{1}\cos{t}+c_{2}\sin{t}) + e^{-2t}(-c_{1}\sin{t}+c_{2}\cos{t})
+\end{eqnarray*}\]</div>
+<p>Use initial conditions</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(0)&amp;=&amp;1=c_{1}, \\\\
+y'(0)&amp;=&amp;0=-2c_{1}+c_{2} \rightarrow c_{2}=2\\\\
+&amp;\Longrightarrow&amp; y(t)=e^{-2t}(\cos{t}+2\sin{t})=\sqrt{5}e^{-2t}\cos{}(t-\phi)
+\end{eqnarray*}\]</div>
+<p>This is a solution underdamped.</p>
+</section>
+</div><p>Let us now revisit the problem with slightly modification on the coefficients:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y'' &amp;+&amp; 2py'+\omega_{o}^{2}y=0,\\\\
+\text{where } &amp;\omega_{o}&amp; \text{is the natural frequency and p represents the damping.} 
+\end{eqnarray*}\]</div>
+<p>The characteristic equation is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r^{2} + 2pr + \omega_{o}^{2} = 0 \\\\
+\rightarrow r = -p \pm \sqrt{p^{2}-\omega_{o}^{2}}
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>if p=0, then there is no damping or called undamped.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+&amp;&amp;y''+\omega_{o}^{2}y=0\\\\
+&amp;\Longrightarrow&amp; r=\pm i\omega_{o}\\\\
+&amp;\Longrightarrow&amp; y(t) = c_{1}\cos{\omega_{o}t} + c_{2}\sin{\omega_{o}t} = A\cos{}(\omega_{o}t-\phi)
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>if another case</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+p^{2}-\omega_{o}^{2} &lt; 0 \rightarrow p&lt;\omega_{o},
+\end{eqnarray*}\]</div>
+<p>then we call the solution underdamped.</p>
+<div class="proof definition admonition" id="my-definition1">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span></p>
+<section class="definition-content" id="proof-content">
+<p>We define the pseudo-frequency as:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\omega_{d}^{2} = \omega_{o}^{2} - p^{2}
+\end{eqnarray*}\]</div>
+</section>
+</div><div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+r = -p \pm \sqrt{-\omega_{d}^{2}} = -p \pm i\omega_{d}
+\end{eqnarray*}\]</div>
+<p>So the general solution is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) &amp;=&amp; e^{-pt}(c_{1}\cos{}(\omega_{d}t) + c_{2}\sin{}(\omega_{d})) \\\\
+&amp;=&amp; Ae^{-pt}\cos{}(\omega_{d}t-\phi)
+\end{eqnarray*}\]</div>
+</section>
+<section id="similarity-between-electrical-and-spring-dash-pot-system">
+<h2>Similarity between electrical and spring-dash pot system<a class="headerlink" href="#similarity-between-electrical-and-spring-dash-pot-system" title="Permalink to this heading">#</a></h2>
+<figure class="align-default" id="similar">
+<a class="reference internal image-reference" href="_static/figures/similarity_ode.jpeg"><img alt="_static/figures/similarity_ode.jpeg" src="_static/figures/similarity_ode.jpeg" /></a>
+</figure>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week3 - integrating factor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week5 - method of undetermined coefficients</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-homogeneous-odes">Second order linear (homogeneous) ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case1-two-real-roots-overdamping">Case1: two real roots (overdamping)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case2-two-equal-roots-critical-damping">Case2: two equal roots (critical damping)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-complex-roots-undamped-underdamped">Case 3: complex roots (undamped/underdamped)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similarity-between-electrical-and-spring-dash-pot-system">Similarity between electrical and spring-dash pot system</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yu-Chiao Liang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
