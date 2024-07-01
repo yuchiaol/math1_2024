@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Week1 - overview of ODEs &#8212; NTUAS ODE and Linear Algebra</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/week1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week2 - responses to inputs &amp; complexify" href="week2.html" />
+    <link rel="prev" title="Applied Mathematics (Ⅰ)" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week1 - overview of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week2.html">Week2 - responses to inputs &amp; complexify</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Week3 - integrating factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Week4 -  fundamental equation of mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Week5 - method of undetermined coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Week6 - exponential response formula (ERF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week7.html">Week7 - variation of parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week8.html">Week8 - Columns and rows of matrix A</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/week1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week1 - overview of ODEs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-ordinary-differential-equations-odes">Overview of ordinary differential equations (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-linear-odes">First order linear ODEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-first-order-ode">Examples of first order ODE.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-odes">Second order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-n-equations">System of n equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">Numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-differential-euqations-pdes">Partial differential euqations (PDEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-calculus-you-need">The calculus you need</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-use-all-rules">An example, use all rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-line-to-a-graph">Tangent line to a graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discretized-differentiation">Discretized differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-our-first-ode">Solve our first ODE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-veiw-of-odes">Geometry veiw of ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition">Superposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-odes">Linear ODEs?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-and-uniqueness">Existence and uniqueness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-ode-and-solution">Homogeneous ODE and solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-structure">Solution structure</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="week1-overview-of-odes">
+<span id="week1"></span><h1>Week1 - overview of ODEs<a class="headerlink" href="#week1-overview-of-odes" title="Permalink to this heading">#</a></h1>
+<section id="overview-of-ordinary-differential-equations-odes">
+<h2>Overview of ordinary differential equations (ODEs)<a class="headerlink" href="#overview-of-ordinary-differential-equations-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>linear -&gt; superposition</p></li>
+<li><p>nonlinear -&gt; cannot solve</p></li>
+<li><p>constant coefficients are nice.</p></li>
+</ul>
+</section>
+<section id="first-order-linear-odes">
+<h2>First order linear ODEs<a class="headerlink" href="#first-order-linear-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>general form: $$\frac{dy}{dt} = ay + q(t) \text{ or } \frac{dy}{dt} = a(t)y + q(t)$$</p></li>
+<li><p>rate of change: $$\frac{dy}{dt}$$</p></li>
+</ul>
+<section id="examples-of-first-order-ode">
+<h3>Examples of first order ODE.<a class="headerlink" href="#examples-of-first-order-ode" title="Permalink to this heading">#</a></h3>
+<p>solve and assume y(0)=1.</p>
+<ol class="arabic simple">
+<li><p>$$\frac{dy}{dt}=y \rightarrow y(t)=e^{t}$$</p></li>
+<li><p>$$\frac{dy}{dt}=-y \rightarrow y(t)=e^{-t}$$</p></li>
+<li><p>$$\frac{dy}{dt}=2ty \rightarrow y(t)=e^{t^{2}}$$</p></li>
+<li><p>$$\frac{dy}{dt}=y^{2} \rightarrow y(t)=\frac{1}{1-t}$$</p></li>
+</ol>
+</section>
+</section>
+<section id="second-order-linear-odes">
+<h2>Second order linear ODEs<a class="headerlink" href="#second-order-linear-odes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>second order derivative indicates acceleration or curvature: $$\frac{d^{2}y}{dt^{2}}$$</p></li>
+<li><p>Hooke’s Las: $$\frac{d^{2}y}{dt^{2}} = -ky$$</p></li>
+<li><p>fundamental equation of mechanics $$my’’+by’+ky=f(t),$$ where by’ implies dampling.</p></li>
+</ul>
+</section>
+<section id="system-of-n-equations">
+<h2>System of n equations<a class="headerlink" href="#system-of-n-equations" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>first order system, A is a n by n matrix: $$\frac{d\vec{y}}{dt}=A\vec{y}$$</p></li>
+<li><p>second order system, S is a matrix: $$\frac{d^{2}\vec{y}}{dt^{2}}=-S\vec{y}$$</p></li>
+</ul>
+</section>
+<section id="numerical-solutions">
+<h2>Numerical solutions<a class="headerlink" href="#numerical-solutions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MATLAB ode45</p></li>
+<li><p>neural network to solve ODEs</p></li>
+<li><p>ChatGPT to solve ODEs (BE CAREFULL!)</p></li>
+</ul>
+</section>
+<section id="partial-differential-euqations-pdes">
+<h2>Partial differential euqations (PDEs)<a class="headerlink" href="#partial-differential-euqations-pdes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>heat equation: $$\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}$$</p></li>
+<li><p>wave equation: $$\frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}$$</p></li>
+<li><p>Laplace equation: $$\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=0$$</p></li>
+</ul>
+</section>
+<section id="the-calculus-you-need">
+<h2>The calculus you need<a class="headerlink" href="#the-calculus-you-need" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>derivitives of functions: $$x^{n}, \sin{x}, \cos{x}, e^{x}, \ln{x}$$</p></li>
+<li><p>rules for derivatives:</p>
+<ul>
+<li><p>sum rule</p></li>
+<li><p>product rule</p></li>
+<li><p>quotient rule</p></li>
+<li><p>chain rule: $$\frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}$$</p></li>
+</ul>
+</li>
+<li><p>fundamental theorem of calculus:</p></li>
+</ul>
+<p>$$
+\int_{a}^{b} \frac{dy}{dx},dx = y(b) - y(a)
+$$</p>
+<p>$$
+\frac{d}{dx}\int_{a}^{x} f(s),ds = f(x)
+$$</p>
+<section id="an-example-use-all-rules">
+<h3>An example, use all rules<a class="headerlink" href="#an-example-use-all-rules" title="Permalink to this heading">#</a></h3>
+<p>Show that below function y(t) solves $$\frac{dy}{dt}=y+q{t},$$ where q(t) is an external source term.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) &amp;=&amp; \int_{0}^{t}e^{t-s}q(s)\,ds\\
+\Longrightarrow y(t) &amp;=&amp; \int_{0}^{t}e^{t-s}q(s)\,ds = e^{t}\int_{0}^{t}e^{-s}q(s)\,ds\\
+\Longrightarrow \frac{dy}{dt} &amp;=&amp; e^{t}\int_{0}^{t}e^{-s}q(s)\,ds + e^{t}(e^{-t}q(t)) = y(t) + q(t)
+\end{eqnarray*}\]</div>
+</section>
+</section>
+<section id="tangent-line-to-a-graph">
+<h2>Tangent line to a graph<a class="headerlink" href="#tangent-line-to-a-graph" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Taylor expansion series:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+f(t+\Delta t) \approx f(t)+\Delta t\frac{df}{dt}(t) + \frac{\Delta t^{2}}{2!}\frac{d^{2}f}{dt^{2}}(t)+\cdots + \frac{\Delta t^{n}}{n!}\frac{d^{n}f}{dt^{n}}(t)
+\end{eqnarray*}\]</div>
+</section>
+<section id="discretized-differentiation">
+<h2>Discretized differentiation<a class="headerlink" href="#discretized-differentiation" title="Permalink to this heading">#</a></h2>
+<p>$$\frac{dy}{dx} \approx \frac{\Delta y}{\Delta x}$$</p>
+<ul class="simple">
+<li><p>approximate y:
+$$\Delta y \approx \frac{dy}{dx}\Delta x \rightarrow y(x_{o}+\Delta x) \approx y(x_{o})+\Delta x\frac{dy}{dx}(x_{o}), \text{ assuming we know } \frac{dy}{dx}$$</p></li>
+<li><p>Newton’s method (finding roots):</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\Delta x \approx \frac{\Delta y}{\frac{dy}{dx}} \rightarrow x_{1} - x_{o} = \frac{y(x_{1})-y(x_{o})}{\frac{dy}{dx}(x_{o})}
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>central difference</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dx}\approx \frac{\Delta y}{\Delta x} = \frac{y(x+\frac{1}{2}\Delta x)-y(x-\frac{1}{2}\Delta x)}{\Delta x}
+\end{eqnarray*}\]</div>
+</section>
+<section id="solve-our-first-ode">
+<h2>Solve our first ODE<a class="headerlink" href="#solve-our-first-ode" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dt} = ay, \text{ given } y(0) = y_{o}
+\end{eqnarray*}\]</div>
+<p>We don’t know how to solve, but we can guess the exponential-type solution:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) = Ae^{\alpha t}, \text{ and so the problem is to find } A \text{ and } \alpha.
+\end{eqnarray*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dt} = A\alpha e^{\alpha t} \Longrightarrow \alpha = a \Longrightarrow y(t) = Ae^{at}
+\end{eqnarray*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(0) = y_o{} = Ae^{a\times 0} = A \Longrightarrow y(t)=y_{o}e^{at}
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>if a&gt;0, then the solution grows exponentially</p></li>
+<li><p>if a&lt;0, then the solution decays exponentially</p></li>
+</ul>
+</section>
+<section id="geometry-veiw-of-odes">
+<h2>Geometry veiw of ODEs<a class="headerlink" href="#geometry-veiw-of-odes" title="Permalink to this heading">#</a></h2>
+<p>analytic vs geometry:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y'(t)=f(x,y) \leftrightarrow \text{ direction field}\\\\
+\text{solution } y(x) \leftrightarrow \text{ integral curve}
+\end{eqnarray*}\]</div>
+</section>
+<section id="superposition">
+<h2>Superposition<a class="headerlink" href="#superposition" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>additivity</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+F(x_{1}+x_{2}) = F(x_{1}) + F(x_{2})
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>homogeneity (porportionality a is a scaler)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+F(ax) = aF(x)
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>use additivity and homogeneity, we can derive:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+F(ax_{1}+bx_{2}) = aF(x_{1}) + bF(x_{2}),
+\end{eqnarray*}\]</div>
+<p>which is also called linear combination</p>
+<section id="linear-odes">
+<h3>Linear ODEs?<a class="headerlink" href="#linear-odes" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>are they linear ODEs?</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y'=ky, \\
+y'+y^{3}t=y,\\
+y'+\cos{x}y=x^{3},\\
+\frac{y'}{y}=t^{2},\\ 
+x^{2}yy'+4x=x^{3}
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>show below ODE does not satisify superposition.</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y'+y^{2}=q(t)
+\end{eqnarray*}\]</div>
+</section>
+</section>
+<section id="existence-and-uniqueness">
+<h2>Existence and uniqueness<a class="headerlink" href="#existence-and-uniqueness" title="Permalink to this heading">#</a></h2>
+<p>For the linear first-order ODE, we are not touching the existence, as it is hard to prove consdering the scale of this class. On the other hand, the uniqueness is rather straightforward. Consider</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dt} + ay = q(t), y(0)=y_{0}
+\end{eqnarray*}\]</div>
+<p>Assume two solutions are different</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y_{1}(t) \neq y_{2}(t), \forall t
+\end{eqnarray*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{y_{1}}{dt}&amp;+&amp;ay_{1}=q(t)\\\\
+\frac{y_{2}}{dt}&amp;+&amp;ay_{2}=q(t)\\\\
+\end{eqnarray*}\]</div>
+<p>Subtract the two equation, we can get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{d(y_{1}-y_{2})}{dt} + a(y_{1}-y_{2}) = 0
+\end{eqnarray*}\]</div>
+<p>Let</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+Y&amp;=&amp;y_{1}-y_{2}, Y(0)=0\\\\
+&amp;\Longrightarrow&amp; \frac{dY}{dt}=-aY\\\\
+&amp;\Longrightarrow&amp; Y=e^{-at}, \forall t\\\\
+&amp;\Longrightarrow&amp; Y(0) = 0 = A \\\\
+&amp;\Longrightarrow&amp; Y(t) = 0, \forall t \\\\
+&amp;\Longrightarrow&amp; y_{1}(t) = y_{2}(t), \forall t.
+\end{eqnarray*}\]</div>
+<p>This is a contradiction! So the two solutions have to be the same for all t.</p>
+</section>
+<section id="homogeneous-ode-and-solution">
+<h2>Homogeneous ODE and solution<a class="headerlink" href="#homogeneous-ode-and-solution" title="Permalink to this heading">#</a></h2>
+<p>Consider</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dt} = ay, y(0)=y_{0}
+\end{eqnarray*}\]</div>
+<p>Assume solution is in exponential form</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) = Ae^{\alpha t}.
+\end{eqnarray*}\]</div>
+<p>Plug it into the ODE</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+A\alpha e^{\alpha t} = aAe^{\alpha t} \rightarrow \alpha = a \rightarrow y(t)=Ae^{at}
+\end{eqnarray*}\]</div>
+<p>Use initial condition, we can get</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(0)=y_{0}=Ae^{a\cdot 0}=A \rightarrow y(t) = y_{0}e^{at}
+\end{eqnarray*}\]</div>
+</section>
+<section id="solution-structure">
+<h2>Solution structure<a class="headerlink" href="#solution-structure" title="Permalink to this heading">#</a></h2>
+<p>Consider the ODE with initial condition</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dy}{dt}=ay+q(t), \text{  given } y(0),
+\end{eqnarray*}\]</div>
+<p>where q(t) is the source term.</p>
+<p>We can separate solution into two parts:</p>
+<ul class="simple">
+<li><p>homogeneous solution or null solution with no source term, which comes from y(0):</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{y_{h}}{dt} = ay_{h}.
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>particular solution, which comes from q(t):</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{y_{p}}{dt} = ay_{p} + q(t)
+\end{eqnarray*}\]</div>
+<ul class="simple">
+<li><p>general solution or complete solution</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+y(t) = y_{h}(t) + y_{p}(t)
+\end{eqnarray*}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Applied Mathematics (Ⅰ)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week2 - responses to inputs &amp; complexify</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-ordinary-differential-equations-odes">Overview of ordinary differential equations (ODEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-linear-odes">First order linear ODEs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-first-order-ode">Examples of first order ODE.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-linear-odes">Second order linear ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-of-n-equations">System of n equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-solutions">Numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-differential-euqations-pdes">Partial differential euqations (PDEs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-calculus-you-need">The calculus you need</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-use-all-rules">An example, use all rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-line-to-a-graph">Tangent line to a graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discretized-differentiation">Discretized differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-our-first-ode">Solve our first ODE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-veiw-of-odes">Geometry veiw of ODEs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superposition">Superposition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-odes">Linear ODEs?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-and-uniqueness">Existence and uniqueness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneous-ode-and-solution">Homogeneous ODE and solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-structure">Solution structure</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yu-Chiao Liang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
