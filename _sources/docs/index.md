@@ -26,7 +26,7 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Ya-Fan Chung (鍾雅帆)
 
 ## Course description
-This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic nermical methods for solving ODE nermically will also be introduced. The math skills will be applied to atmospheric sciences problems.
+This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic numerical methods for solving ODEs will also be introduced. These math skills will be applied to atmospheric sciences problems.
 
 First order ODEs:
 - responses to (complex) exponential, oscillating, delta and step function inputs
