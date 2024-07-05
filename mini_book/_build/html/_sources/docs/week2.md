@@ -34,15 +34,25 @@ $$y(t) = \frac{e^{st}}{s-a} + [y(0)-\frac{1}{s-a}]e^{at} = \frac{e^{st}-e^{at}}{
 We also define the very particular solution
 $$y_{vp}(t) = \frac{e^{st}-e^{at}}{s-a} \rightarrow y_{vp}(0) = 0$$
 
+Note that we can calculate the very particular solution this way:
+$$
+y_{vp} = \int_{0}^{t}e^{a(t-x)}e^{sx}dx = e^{at}\int_{0}^{t}e^{(s-a)x}dx = e^{at}\frac{1}{s-a}e^{(s-a)x}
+ \verb|\||^{x=t}_{x=0} \
+=\frac{e^{st}-e^{at}}{s-a}
+$$
 ````{prf:example}
 :label: my-example_exp_response1
-If s=a, then the resonance occurs  What is the solution? How can we get the solution?
+If s=a, then the resonance occurs.
+What is the solution? How can we get the solution?
 We can use L'Hospital's rule:
-\begin{eqnarray}
+$$
 \lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)} 
 = \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
-\end{eqnarray}
+$$
 ````
+## Response to oscillating input
+
+
 
 \begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st}
