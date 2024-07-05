@@ -331,7 +331,7 @@ document.write(`
 <span id="week2"></span><h1>Week2 - responses to inputs &amp; complexify<a class="headerlink" href="#week2-responses-to-inputs-complexify" title="Permalink to this heading">#</a></h1>
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
-<p>Consider ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
+<p>Consider an ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
 <p>Assume initial condition at t =0: $$y=y(0)$$, we now look for particular solution in the form of:
 $$y_{p}(t) = Ye^{st}$$</p>
 <p>Plug it into the ODE, we can get
@@ -344,9 +344,19 @@ $$y(0)=\frac{1}{s-a}+C \rightarrow C = y(0) - \frac{1}{s-a}$$</p>
 $$y(t) = \frac{e^{st}}{s-a} + [y(0)-\frac{1}{s-a}]e^{at} = \frac{e^{st}-e^{at}}{s-a}+y(0)e^{at}$$</p>
 <p>We also define the very particular solution
 $$y_{vp}(t) = \frac{e^{st}-e^{at}}{s-a} \rightarrow y_{vp}(0) = 0$$</p>
-<p>Consider a case when s=a. This is when resonance occurs. What is the solution? How can we get the solution?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fcf1e2a-c00e-4c39-af4b-560ab9116f9e">
-<span class="eqno">(1)<a class="headerlink" href="#equation-7fcf1e2a-c00e-4c39-af4b-560ab9116f9e" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="proof example admonition" id="my-example_exp_response1">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>If s=a, then the resonance occurs  What is the solution? How can we get the solution?
+We can use L’Hospital’s rule:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-750ce771-830d-4f53-b7f7-5a06e404b1c8">
+<span class="eqno">(1)<a class="headerlink" href="#equation-750ce771-830d-4f53-b7f7-5a06e404b1c8" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+\lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)} 
+= \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
+\end{eqnarray}\]</div>
+</section>
+</div><div class="amsmath math notranslate nohighlight" id="equation-2fc4a93f-deef-4c41-86f7-7d1903a6c07b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-2fc4a93f-deef-4c41-86f7-7d1903a6c07b" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st}
 \end{eqnarray}\]</div>
 </section>
