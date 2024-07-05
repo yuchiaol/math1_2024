@@ -316,6 +316,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-exponential-input">Response to exponential input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
 </ul>
             </nav>
         </div>
@@ -344,19 +345,28 @@ $$y(0)=\frac{1}{s-a}+C \rightarrow C = y(0) - \frac{1}{s-a}$$</p>
 $$y(t) = \frac{e^{st}}{s-a} + [y(0)-\frac{1}{s-a}]e^{at} = \frac{e^{st}-e^{at}}{s-a}+y(0)e^{at}$$</p>
 <p>We also define the very particular solution
 $$y_{vp}(t) = \frac{e^{st}-e^{at}}{s-a} \rightarrow y_{vp}(0) = 0$$</p>
+<p>Note that we can calculate the very particular solution this way:
+$$
+y_{vp} = \int_{0}^{t}e^{a(t-x)}e^{sx}dx = e^{at}\int_{0}^{t}e^{(s-a)x}dx = e^{at}\frac{1}{s-a}e^{(s-a)x}
+\verb|||^{x=t}_{x=0} <br />
+=\frac{e^{st}-e^{at}}{s-a}
+$$</p>
 <div class="proof example admonition" id="my-example_exp_response1">
 <p class="admonition-title"><span class="caption-number">Example 1 </span></p>
 <section class="example-content" id="proof-content">
-<p>If s=a, then the resonance occurs  What is the solution? How can we get the solution?
-We can use L’Hospital’s rule:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-750ce771-830d-4f53-b7f7-5a06e404b1c8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-750ce771-830d-4f53-b7f7-5a06e404b1c8" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
-\lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)} 
+<p>If s=a, then the resonance occurs.
+What is the solution? How can we get the solution?
+We can use L’Hospital’s rule:
+$$
+\lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)}
 = \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
-\end{eqnarray}\]</div>
+$$</p>
 </section>
-</div><div class="amsmath math notranslate nohighlight" id="equation-2fc4a93f-deef-4c41-86f7-7d1903a6c07b">
-<span class="eqno">(2)<a class="headerlink" href="#equation-2fc4a93f-deef-4c41-86f7-7d1903a6c07b" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+</div></section>
+<section id="response-to-oscillating-input">
+<h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-9887a568-cff9-4b31-8a59-320fc38836cb">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9887a568-cff9-4b31-8a59-320fc38836cb" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st}
 \end{eqnarray}\]</div>
 </section>
@@ -426,6 +436,7 @@ We can use L’Hospital’s rule:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-exponential-input">Response to exponential input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
 </ul>
   </nav></div>
 
