@@ -14,7 +14,7 @@ kernelspec:
 # Week2 - responses to inputs & complexify
 
 ## Response to exponential input
-Consider ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the "exponential response" and exponential term on right hand side the "input" or "forcing".
+Consider an ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the "exponential response" and exponential term on right hand side the "input" or "forcing".
 
 Assume initial condition at t =0: $$y=y(0)$$, we now look for particular solution in the form of:
 $$y_{p}(t) = Ye^{st}$$
@@ -34,7 +34,15 @@ $$y(t) = \frac{e^{st}}{s-a} + [y(0)-\frac{1}{s-a}]e^{at} = \frac{e^{st}-e^{at}}{
 We also define the very particular solution
 $$y_{vp}(t) = \frac{e^{st}-e^{at}}{s-a} \rightarrow y_{vp}(0) = 0$$
 
-Consider a case when s=a. This is when resonance occurs. What is the solution? How can we get the solution?
+````{prf:example}
+:label: my-example_exp_response1
+If s=a, then the resonance occurs  What is the solution? How can we get the solution?
+We can use L'Hospital's rule:
+\begin{eqnarray}
+\lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)} 
+= \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
+\end{eqnarray}
+````
 
 \begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st}
