@@ -14,7 +14,11 @@ kernelspec:
 # Week2 - responses to inputs & complexify
 
 ## Response to exponential input
-Consider an ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the "exponential response" and exponential term on right hand side the "input" or "forcing".
+Consider an ODE: 
+\begin{eqnarray}
+\frac{dy}{dt}=ay+e^{st},
+\end{eqnarray}
+where a and s are known. We call y(t) the "exponential response" and exponential term on right hand side the "input" or "forcing".
 
 Assume initial condition at t =0: $$y=y(0)$$, we now look for particular solution in the form of:
 $$y_{p}(t) = Ye^{st}$$
@@ -52,9 +56,48 @@ $$
 ````
 ## Response to oscillating input
 
-
-
+Consider an ODE:
 \begin{eqnarray}
-\frac{dy}{dt}=ay+e^{st}
+\frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}
+
+We look for particular solution (we already know homogeneours solution, right?) in the form of:
+$$
+y_{p}(t) = M\cos (\omega t) + N\sin (\omega t)
+$$
+
+Plug it into the ODE:
+$$
+-\omega M\sin (\omega t) + \omega N \cos (\omega t) = aM\cos (\omega t) + aN\sin (\omega t) + \cos (\omega t)
+$$
+
+Compare the coefficients:
+$$
+-aM+\omega N = 1, -\omega M - aN = 0
+$$
+$$
+\rightarrow M = \frac{-a}{\omega{^2}+a^{2}}, N = \frac{\omega}{\omega{^2}+a^{2}}
+$$
+
+We could also consider the polar form:
+$$
+y_{p}(t) = G\cos (\omega t - \alpha) = G(\cos (\omega t)\cos (\alpha)+\sin (\omega t)\sin (\alpha))
+$$
+
+So that
+$$
+M=G\cos (\alpha), N=G\sin (\alpha),
+$$
+$$
+M^{2} + N^{2} = G^{2} \rightarrow G = \sqrt{M^{2}+N^{2}}
+$$
+$$
+\frac{G\sin (\alpha)}{G\cos (\alpha)} = \frac{N}{M} \rightarrow \tan (\alpha) = \frac{N}{M}
+$$
+
+
+
+
+
+
 

@@ -332,7 +332,12 @@ document.write(`
 <span id="week2"></span><h1>Week2 - responses to inputs &amp; complexify<a class="headerlink" href="#week2-responses-to-inputs-complexify" title="Permalink to this heading">#</a></h1>
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
-<p>Consider an ODE: $$\frac{dy}{dt}=ay+e^{st},$$ where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
+<p>Consider an ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bbec6f38-e007-4174-9e2e-af2a0f1354ae">
+<span class="eqno">(1)<a class="headerlink" href="#equation-bbec6f38-e007-4174-9e2e-af2a0f1354ae" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+\frac{dy}{dt}=ay+e^{st},
+\end{eqnarray}\]</div>
+<p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
 <p>Assume initial condition at t =0: $$y=y(0)$$, we now look for particular solution in the form of:
 $$y_{p}(t) = Ye^{st}$$</p>
 <p>Plug it into the ODE, we can get
@@ -365,10 +370,40 @@ $$</p>
 </div></section>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-9887a568-cff9-4b31-8a59-320fc38836cb">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9887a568-cff9-4b31-8a59-320fc38836cb" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
-\frac{dy}{dt}=ay+e^{st}
+<p>Consider an ODE:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3cbade26-639f-456d-9c23-65d0def0e8b1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-3cbade26-639f-456d-9c23-65d0def0e8b1" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+\frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
+<p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
+$$
+y_{p}(t) = M\cos (\omega t) + N\sin (\omega t)
+$$</p>
+<p>Plug it into the ODE:
+$$
+-\omega M\sin (\omega t) + \omega N \cos (\omega t) = aM\cos (\omega t) + aN\sin (\omega t) + \cos (\omega t)
+$$</p>
+<p>Compare the coefficients:
+$$
+-aM+\omega N = 1, -\omega M - aN = 0
+$$
+$$
+\rightarrow M = \frac{-a}{\omega{^2}+a^{2}}, N = \frac{\omega}{\omega{^2}+a^{2}}
+$$</p>
+<p>We could also consider the polar form:
+$$
+y_{p}(t) = G\cos (\omega t - \alpha) = G(\cos (\omega t)\cos (\alpha)+\sin (\omega t)\sin (\alpha))
+$$</p>
+<p>So that
+$$
+M=G\cos (\alpha), N=G\sin (\alpha),
+$$
+$$
+M^{2} + N^{2} = G^{2} \rightarrow G = \sqrt{M^{2}+N^{2}}
+$$
+$$
+\frac{G\sin (\alpha)}{G\cos (\alpha)} = \frac{N}{M} \rightarrow \tan (\alpha) = \frac{N}{M}
+$$</p>
 </section>
 </section>
 
