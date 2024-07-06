@@ -28,14 +28,14 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 ## Course description
 This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic numerical methods for solving ODEs will also be introduced. These math skills will be applied to atmospheric sciences problems.
 
-First order ODEs:
+### First-order ODEs:
 - responses to (complex) exponential, oscillating, delta and step function inputs
 - integrating factor
 - separable euqations
 - exact solution
 - phase line
 
-Second order ODEs:
+### Second-order ODEs:
 - fundamental equation of mechanics
 - forced harmonic motion
 - unforced damped motion
@@ -43,7 +43,7 @@ Second order ODEs:
 - method of undetermined coefficients
 - variation of parameters
 
-Linear algebra:
+### Linear algebra:
 - row and column view of matrix multiplication
 - independence, basis, and dimension
 - four fundamental subspaces
@@ -53,56 +53,57 @@ Linear algebra:
 A = CR
 \end{eqnarray*}
 2. LU elimination: 
-\begin{eqnarray*}
-A = LU
-\end{eqnarray*}
+$$A = LU$$
 3. orthogonalization (Gram-Schmidt): 
-\begin{eqnarray*}
-A = QR
-\end{eqnarray*}
+$$A = QR$$
 4. eigenvalues: 
-\begin{eqnarray*}
-S = Q\Lambda Q^{T}
-\end{eqnarray*}
+$$S = Q\Lambda Q^{T}$$
 5. diagonalization: 
-\begin{eqnarray*}
-A = X\Lambda X^{T}
-\end{eqnarray*}
+$$A = X\Lambda X^{T}$$
 6. singular value decomposition (SVD): 
-\begin{eqnarray*}
-A = U\Sigma V^{T}
-\end{eqnarray*}
+$$A = U\Sigma V^{T}$$
 
-Solving linear system:
+### Solving linear system:
 - matrix exponential
 - phase plane: source, sink, saddle
 
-Numerical nethods:
+### Numerical nethods:
 - xxx
 
+### Vector calculus and tensor
+- definition of a vector
+- second-order tensor
+- dot product, cross product
+- gradient, divergenct, curl
+- Gauss' theorem
+- Stokes' theorem
+
 ## Textbooks and videos
-Differential Equations and Linear Algebra:
+### Differential Equations and Linear Algebra:
 - website: [https://math.mit.edu/~gs/dela/](https://math.mit.edu/~gs/dela/)
 - youtube: [https://www.youtube.com/playlist?list=PLMsYJgjgZE8iBpOBZEsS8PuwNBkwMcjix](https://www.youtube.com/playlist?list=PLMsYJgjgZE8iBpOBZEsS8PuwNBkwMcjix)
 
-Differential Equations:
+### Differential Equations:
 - website: [https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/](https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/)
 - youtube: [https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E](https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E)
 
-Introduction to Linear Algebra:
+### Introduction to Linear Algebra:
 - website: [https://math.mit.edu/~gs/linearalgebra/](https://math.mit.edu/~gs/linearalgebra/)
 - youtube: [https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8](https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8)
 
-Linear Algebra and Learning from Data:
+### Linear Algebra and Learning from Data:
 - website: [https://math.mit.edu/~gs/learningfromdata/](https://math.mit.edu/~gs/learningfromdata/)
 - youtube: [https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k](https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k)
 
-Nonlinear Dynamics and Chaos:
+### Nonlinear Dynamics and Chaos:
 - website: [https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering](https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering)
 - youtube: [https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)
 
-Advanced Engineering Mathematics:
+### Advanced Engineering Mathematics:
 - website: [https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929](https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929)
+
+### Fluid Mechanics:
+- website: [https://www.sciencedirect.com/book/9780124059351/fluid-mechanics](https://www.sciencedirect.com/book/9780124059351/fluid-mechanics)
 
 
 

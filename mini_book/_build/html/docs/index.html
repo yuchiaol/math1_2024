@@ -316,8 +316,25 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-information">Class information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-assistants">Teaching assistants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks-and-videos">Textbooks and videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-system">Solving linear system:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-nethods">Numerical nethods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus-and-tensor">Vector calculus and tensor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks-and-videos">Textbooks and videos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-and-linear-algebra">Differential Equations and Linear Algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential Equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-linear-algebra">Introduction to Linear Algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-learning-from-data">Linear Algebra and Learning from Data:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-dynamics-and-chaos">Nonlinear Dynamics and Chaos:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-engineering-mathematics">Advanced Engineering Mathematics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-mechanics">Fluid Mechanics:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -364,7 +381,8 @@ and Professor <a class="reference external" href="https://www.stevenstrogatz.com
 <section id="course-description">
 <h2>Course description<a class="headerlink" href="#course-description" title="Permalink to this heading">#</a></h2>
 <p>This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic numerical methods for solving ODEs will also be introduced. These math skills will be applied to atmospheric sciences problems.</p>
-<p>First order ODEs:</p>
+<section id="first-order-odes">
+<h3>First-order ODEs:<a class="headerlink" href="#first-order-odes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>responses to (complex) exponential, oscillating, delta and step function inputs</p></li>
 <li><p>integrating factor</p></li>
@@ -372,7 +390,9 @@ and Professor <a class="reference external" href="https://www.stevenstrogatz.com
 <li><p>exact solution</p></li>
 <li><p>phase line</p></li>
 </ul>
-<p>Second order ODEs:</p>
+</section>
+<section id="second-order-odes">
+<h3>Second-order ODEs:<a class="headerlink" href="#second-order-odes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>fundamental equation of mechanics</p></li>
 <li><p>forced harmonic motion</p></li>
@@ -381,7 +401,9 @@ and Professor <a class="reference external" href="https://www.stevenstrogatz.com
 <li><p>method of undetermined coefficients</p></li>
 <li><p>variation of parameters</p></li>
 </ul>
-<p>Linear algebra:</p>
+</section>
+<section id="linear-algebra">
+<h3>Linear algebra:<a class="headerlink" href="#linear-algebra" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>row and column view of matrix multiplication</p></li>
 <li><p>independence, basis, and dimension</p></li>
@@ -396,81 +418,92 @@ and Professor <a class="reference external" href="https://www.stevenstrogatz.com
 A = CR
 \end{eqnarray*}\]</div>
 <ol class="arabic simple" start="2">
-<li><p>LU elimination:</p></li>
+<li><p>LU elimination:
+$$A = LU$$</p></li>
+<li><p>orthogonalization (Gram-Schmidt):
+$$A = QR$$</p></li>
+<li><p>eigenvalues:
+$$S = Q\Lambda Q^{T}$$</p></li>
+<li><p>diagonalization:
+$$A = X\Lambda X^{T}$$</p></li>
+<li><p>singular value decomposition (SVD):
+$$A = U\Sigma V^{T}$$</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-A = LU
-\end{eqnarray*}\]</div>
-<ol class="arabic simple" start="3">
-<li><p>orthogonalization (Gram-Schmidt):</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-A = QR
-\end{eqnarray*}\]</div>
-<ol class="arabic simple" start="4">
-<li><p>eigenvalues:</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-S = Q\Lambda Q^{T}
-\end{eqnarray*}\]</div>
-<ol class="arabic simple" start="5">
-<li><p>diagonalization:</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-A = X\Lambda X^{T}
-\end{eqnarray*}\]</div>
-<ol class="arabic simple" start="6">
-<li><p>singular value decomposition (SVD):</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-A = U\Sigma V^{T}
-\end{eqnarray*}\]</div>
-<p>Solving linear system:</p>
+</section>
+<section id="solving-linear-system">
+<h3>Solving linear system:<a class="headerlink" href="#solving-linear-system" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>matrix exponential</p></li>
 <li><p>phase plane: source, sink, saddle</p></li>
 </ul>
-<p>Numerical nethods:</p>
+</section>
+<section id="numerical-nethods">
+<h3>Numerical nethods:<a class="headerlink" href="#numerical-nethods" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>xxx</p></li>
 </ul>
 </section>
+<section id="vector-calculus-and-tensor">
+<h3>Vector calculus and tensor<a class="headerlink" href="#vector-calculus-and-tensor" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>definition of a vector</p></li>
+<li><p>second-order tensor</p></li>
+<li><p>dot product, cross product</p></li>
+<li><p>gradient, divergenct, curl</p></li>
+<li><p>Gauss’ theorem</p></li>
+<li><p>Stokes’ theorem</p></li>
+</ul>
+</section>
+</section>
 <section id="textbooks-and-videos">
 <h2>Textbooks and videos<a class="headerlink" href="#textbooks-and-videos" title="Permalink to this heading">#</a></h2>
-<p>Differential Equations and Linear Algebra:</p>
+<section id="differential-equations-and-linear-algebra">
+<h3>Differential Equations and Linear Algebra:<a class="headerlink" href="#differential-equations-and-linear-algebra" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://math.mit.edu/~gs/dela/">https://math.mit.edu/~gs/dela/</a></p></li>
 <li><p>youtube: <a class="reference external" href="https://www.youtube.com/playlist?list=PLMsYJgjgZE8iBpOBZEsS8PuwNBkwMcjix">https://www.youtube.com/playlist?list=PLMsYJgjgZE8iBpOBZEsS8PuwNBkwMcjix</a></p></li>
 </ul>
-<p>Differential Equations:</p>
+</section>
+<section id="differential-equations">
+<h3>Differential Equations:<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/">https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/</a></p></li>
 <li><p>youtube: <a class="reference external" href="https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E">https://www.youtube.com/playlist?list=PL64BDFBDA2AF24F7E</a></p></li>
 </ul>
-<p>Introduction to Linear Algebra:</p>
+</section>
+<section id="introduction-to-linear-algebra">
+<h3>Introduction to Linear Algebra:<a class="headerlink" href="#introduction-to-linear-algebra" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://math.mit.edu/~gs/linearalgebra/">https://math.mit.edu/~gs/linearalgebra/</a></p></li>
 <li><p>youtube: <a class="reference external" href="https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8">https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8</a></p></li>
 </ul>
-<p>Linear Algebra and Learning from Data:</p>
+</section>
+<section id="linear-algebra-and-learning-from-data">
+<h3>Linear Algebra and Learning from Data:<a class="headerlink" href="#linear-algebra-and-learning-from-data" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://math.mit.edu/~gs/learningfromdata/">https://math.mit.edu/~gs/learningfromdata/</a></p></li>
 <li><p>youtube: <a class="reference external" href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k">https://www.youtube.com/playlist?list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k</a></p></li>
 </ul>
-<p>Nonlinear Dynamics and Chaos:</p>
+</section>
+<section id="nonlinear-dynamics-and-chaos">
+<h3>Nonlinear Dynamics and Chaos:<a class="headerlink" href="#nonlinear-dynamics-and-chaos" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering">https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering</a></p></li>
 <li><p>youtube: <a class="reference external" href="https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V">https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V</a></p></li>
 </ul>
-<p>Advanced Engineering Mathematics:</p>
+</section>
+<section id="advanced-engineering-mathematics">
+<h3>Advanced Engineering Mathematics:<a class="headerlink" href="#advanced-engineering-mathematics" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>website: <a class="reference external" href="https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929">https://www.wiley.com/en-us/Advanced+Engineering+Mathematics%2C+10th+Edition-p-9781119455929</a></p></li>
 </ul>
+</section>
+<section id="fluid-mechanics">
+<h3>Fluid Mechanics:<a class="headerlink" href="#fluid-mechanics" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>website: <a class="reference external" href="https://www.sciencedirect.com/book/9780124059351/fluid-mechanics">https://www.sciencedirect.com/book/9780124059351/fluid-mechanics</a></p></li>
+</ul>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -532,8 +565,25 @@ A = U\Sigma V^{T}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-information">Class information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-assistants">Teaching assistants</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks-and-videos">Textbooks and videos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-odes">First-order ODEs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-odes">Second-order ODEs:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-linear-system">Solving linear system:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-nethods">Numerical nethods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-calculus-and-tensor">Vector calculus and tensor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#textbooks-and-videos">Textbooks and videos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations-and-linear-algebra">Differential Equations and Linear Algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">Differential Equations:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-linear-algebra">Introduction to Linear Algebra:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra-and-learning-from-data">Linear Algebra and Learning from Data:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-dynamics-and-chaos">Nonlinear Dynamics and Chaos:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-engineering-mathematics">Advanced Engineering Mathematics:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-mechanics">Fluid Mechanics:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
