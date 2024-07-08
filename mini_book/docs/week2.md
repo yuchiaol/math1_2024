@@ -75,6 +75,8 @@ Compare the coefficients:
 $$
 -aM+\omega N = 1, -\omega M - aN = 0
 $$
+
+We can use matrix-vector form (linear algebra) to solve M and N, right?
 $$
 \rightarrow M = \frac{-a}{\omega{^2}+a^{2}}, N = \frac{\omega}{\omega{^2}+a^{2}}
 $$
@@ -94,6 +96,19 @@ $$
 $$
 \frac{G\sin (\alpha)}{G\cos (\alpha)} = \frac{N}{M} \rightarrow \tan (\alpha) = \frac{N}{M}
 $$
+
+So that
+$$
+\frac{dy}{dt}=G(-\sin (\omega t-\alpha))\omega = aG\cos (\omega t-\alpha) + \cos (\omega t)
+$$
+$$
+\rightarrow -G(\sin (\omega t)\cos (\alpha) - \sin (\alpha)\cos (\omega t)) = aG(\cos (\omega t)\cos (\alpha)+\sin (\omega t)\sin (\alpha)) + \cos (\omega t)
+$$
+$$
+\rightarrow G(\sin (\alpha)\cos (\omega t) - \sin (\omega t)\cos (\alpha) - a\cos (\omega t)\cos (\alpha)-a\sin (\omega t)\sin (\alpha)) = \cos (\omega t)
+$$
+
+
 
 
 
