@@ -28,55 +28,55 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 ## Course description
 This course gives students an overview of first and second order linear ordinary differential equations (OEDs) and linear algebra. Basic numerical methods for solving ODEs will also be introduced. These math skills will be applied to atmospheric sciences problems.
 
+## Class schedule
+
 ### First-order ODEs:
-- responses to (complex) exponential, oscillating, delta and step function inputs
-- integrating factor
-- separable euqations
-- exact solution
-- phase line
+- <span style="color:red">Week1</span>: responses to (complex) exponential, oscillating inputs
+- <span style="color:red">Week2</span>: responses to delta and step function inputs, integrating factor
+- <span style="color:red">Week3</span>: separable euqations and exact solution, phase line
 
 ### Second-order ODEs:
-- fundamental equation of mechanics
-- forced harmonic motion
-- unforced damped motion
-- impulse response, exponential response
-- method of undetermined coefficients
-- variation of parameters
+- <span style="color:red">Week4</span>: fundamental equation of mechanics, forced harmonic motion and unforced damped motion
+- <span style="color:red">Week5</span>: impulse response, exponential response
+- <span style="color:red">Week6</span>: method of undetermined coefficients and variation of parameters
+
+### Numerical nethods for solving ODE:
+- <span style="color:red">Week7</span>: xxx
+- <span style="color:red">Week8</span>: xxx
+
+## <span style="color:red">Week8</span> midterm exam
 
 ### Linear algebra:
-- row and column view of matrix multiplication
-- independence, basis, and dimension
-- four fundamental subspaces
-- factorization
-1. CR decomposition: 
+- <span style="color:red">Week9</span>: row and column view of matrix multiplication, independence, basis, and dimension
+- <span style="color:red">Week10</span>: four fundamental subspaces
+factorization:
+- <span style="color:red">Week11</span>: CR decomposition and LU decomposition: 
 \begin{eqnarray*}
 A = CR
 \end{eqnarray*}
-2. LU elimination: 
 $$A = LU$$
-3. orthogonalization (Gram-Schmidt): 
+- <span style="color:red">Week12</span>: orthogonalization (Gram-Schmidt) and eigenvalues and diagnolization: 
 $$A = QR$$
-4. eigenvalues: 
 $$S = Q\Lambda Q^{T}$$
-5. diagonalization: 
 $$A = X\Lambda X^{T}$$
-6. singular value decomposition (SVD): 
+- <span style="color:red">Week13</span>: singular value decomposition (SVD): 
 $$A = U\Sigma V^{T}$$
 
+### Numerical nethods for linear algebra:
+- <span style="color:red">Week14</span>: xxx
+
 ### Solving linear system:
-- matrix exponential
-- phase plane: source, sink, saddle
+- <span style="color:red">Week15</span>: matrix exponential, and plane: source, sink, saddle
 
-### Numerical nethods:
-- xxx
-
-### Vector calculus and tensor
+### Vector calculus and tensor (Week 15? or distributed to each week?)
 - definition of a vector
 - second-order tensor
 - dot product, cross product
 - gradient, divergenct, curl
 - Gauss' theorem
 - Stokes' theorem
+
+### <span style="color:red">Week15</span>: final exam
 
 ## Textbooks and videos
 ### Differential Equations and Linear Algebra:
