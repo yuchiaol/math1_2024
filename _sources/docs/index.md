@@ -107,6 +107,6 @@ $$A = U\Sigma V^{T}$$
 
 ### Linear Algebra Notes Chi Lok Loi
 - website: [https://github.com/BenjaminGor/Intro_to_LinAlg_Earth](https://github.com/BenjaminGor/Intro_to_LinAlg_Earth)
-
+- pdf: [https://github.com/BenjaminGor/Intro_to_LinAlg_Earth/blob/main/Linear_Algebra_Notes_New.pdf](https://github.com/BenjaminGor/Intro_to_LinAlg_Earth/blob/main/Linear_Algebra_Notes_New.pdf)
 
 
