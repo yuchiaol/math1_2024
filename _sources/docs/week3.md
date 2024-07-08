@@ -9,8 +9,8 @@ kernelspec:
   name: python3
 ---
 
-(week3)=
+(lecture3)=
 
-# Week3 - integrating factor
+# Lecture3 - integrating factor
 
 

@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week1)=
+(lecture1)=
 
-# Week1 - overview of ODEs
+# Lecture1 - overview of ODEs
 
 ## Overview of ordinary differential equations (ODEs)
 - linear -> superposition
