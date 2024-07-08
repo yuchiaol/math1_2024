@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week2)=
+(Lecture2)=
 
-# Week2 - responses to inputs & complexify
+# Lecture2 - responses to inputs & complexify
 
 ## Response to exponential input
 Consider an ODE: 
@@ -108,10 +108,31 @@ $$
 \rightarrow G(\sin (\alpha)\cos (\omega t) - \sin (\omega t)\cos (\alpha) - a\cos (\omega t)\cos (\alpha)-a\sin (\omega t)\sin (\alpha)) = \cos (\omega t)
 $$
 
+## Formula for calculating very particular solution
+To this end, I would like to recap the forumla mentioned in previous lecture:
+$$
+\frac{dy}{dt} = ay + q(t),
+$$
+where q(t) is the input.
+\begin{eqnarray}
+y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
+\end{eqnarray}
 
+And the general or complete solution is	
+$$
+y(t) = y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
+$$
 
+Check 
+$$
+\frac{dy_{vp}}{dt} = ay_{vp} + q(t), y_{vp}(0) = 0
+$$
 
-
+## Response to constant input
+Assume q(t) is equal to a constant C, then
+$$
+y(t) = xxx
+$$
 
 
 

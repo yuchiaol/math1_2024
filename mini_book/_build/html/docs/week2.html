@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week2 - responses to inputs &amp; complexify &#8212; NTUAS ODE and Linear Algebra</title>
+    <title>Lecture2 - responses to inputs &amp; complexify &#8212; NTUAS ODE and Linear Algebra</title>
   
   
   
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="week1.html">Week1 - overview of ODEs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week2 - responses to inputs &amp; complexify</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture2 - responses to inputs &amp; complexify</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week3.html">Week3 - integrating factor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week4.html">Week4 -  fundamental equation of mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week5.html">Week5 - method of undetermined coefficients</a></li>
@@ -305,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week2 - responses to inputs & complexify</h1>
+    <h1>Lecture2 - responses to inputs & complexify</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -317,6 +317,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-exponential-input">Response to exponential input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
 </ul>
             </nav>
         </div>
@@ -328,13 +330,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="week2-responses-to-inputs-complexify">
-<span id="week2"></span><h1>Week2 - responses to inputs &amp; complexify<a class="headerlink" href="#week2-responses-to-inputs-complexify" title="Permalink to this heading">#</a></h1>
+  <section id="lecture2-responses-to-inputs-complexify">
+<span id="lecture2"></span><h1>Lecture2 - responses to inputs &amp; complexify<a class="headerlink" href="#lecture2-responses-to-inputs-complexify" title="Permalink to this heading">#</a></h1>
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6545f203-90ad-4e05-a7a6-3e6302a2c2a0">
-<span class="eqno">(1)<a class="headerlink" href="#equation-6545f203-90ad-4e05-a7a6-3e6302a2c2a0" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ff6eec2a-77ea-4f57-ad15-7898d2592e35">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ff6eec2a-77ea-4f57-ad15-7898d2592e35" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -371,8 +373,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e03f0075-fc92-474a-a800-81cd4c908a2e">
-<span class="eqno">(2)<a class="headerlink" href="#equation-e03f0075-fc92-474a-a800-81cd4c908a2e" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-342e510d-fbb3-42a0-9a94-bb1698171b4c">
+<span class="eqno">(2)<a class="headerlink" href="#equation-342e510d-fbb3-42a0-9a94-bb1698171b4c" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -414,6 +416,33 @@ $$
 $$
 $$
 \rightarrow G(\sin (\alpha)\cos (\omega t) - \sin (\omega t)\cos (\alpha) - a\cos (\omega t)\cos (\alpha)-a\sin (\omega t)\sin (\alpha)) = \cos (\omega t)
+$$</p>
+</section>
+<section id="formula-for-calculating-very-particular-solution">
+<h2>Formula for calculating very particular solution<a class="headerlink" href="#formula-for-calculating-very-particular-solution" title="Permalink to this heading">#</a></h2>
+<p>To this end, I would like to recap the forumla mentioned in previous lecture:
+$$
+\frac{dy}{dt} = ay + q(t),
+$$
+where q(t) is the input.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-43066d71-6e95-495f-9e4c-3682496c7269">
+<span class="eqno">(3)<a class="headerlink" href="#equation-43066d71-6e95-495f-9e4c-3682496c7269" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
+\end{eqnarray}\]</div>
+<p>And the general or complete solution is	
+$$
+y(t) = y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
+$$</p>
+<p>Check
+$$
+\frac{dy_{vp}}{dt} = ay_{vp} + q(t), y_{vp}(0) = 0
+$$</p>
+</section>
+<section id="response-to-constant-input">
+<h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
+<p>Assume q(t) is equal to a constant C, then
+$$
+y(t) = xxx
 $$</p>
 </section>
 </section>
@@ -483,6 +512,8 @@ $$</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-exponential-input">Response to exponential input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
 </ul>
   </nav></div>
 
