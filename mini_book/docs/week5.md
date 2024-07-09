@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week5)=
+(lecture5)=
 
-# Week5 - method of undetermined coefficients
+# Lecture5 - method of undetermined coefficients
 This method gives us guide to find the nonhomogeneous (particular) solutions.
 Consider the general form of second order ODE:
 \begin{eqnarray*}

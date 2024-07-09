@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/week2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week3 - integrating factor" href="week3.html" />
-    <link rel="prev" title="Week1 - overview of ODEs" href="week1.html" />
+    <link rel="next" title="Lecture3 - integrating factor" href="week3.html" />
+    <link rel="prev" title="Lecture1 - overview of ODEs" href="week1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,14 +161,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="week1.html">Week1 - overview of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week1.html">Lecture1 - overview of ODEs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture2 - responses to inputs &amp; complexify</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week3.html">Week3 - integrating factor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week4.html">Week4 -  fundamental equation of mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week5.html">Week5 - method of undetermined coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week6.html">Week6 - exponential response formula (ERF)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week7.html">Week7 - variation of parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="week8.html">Week8 - Columns and rows of matrix A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week3.html">Lecture3 - integrating factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week4.html">Lecture4 -  fundamental equation of mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week5.html">Lecture5 - method of undetermined coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week6.html">Lecture6 - exponential response formula (ERF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week7.html">Lecture7 - variation of parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week8.html">Lecture8 - Columns and rows of matrix A</a></li>
 </ul>
 
     </div>
@@ -319,6 +319,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-complex-exponential-input">Response to complex exponential input</a></li>
 </ul>
             </nav>
         </div>
@@ -335,8 +336,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff6eec2a-77ea-4f57-ad15-7898d2592e35">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ff6eec2a-77ea-4f57-ad15-7898d2592e35" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-32f2a4a3-d9ea-44a0-ae3e-4075fcfd6aea">
+<span class="eqno">(1)<a class="headerlink" href="#equation-32f2a4a3-d9ea-44a0-ae3e-4075fcfd6aea" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -373,8 +374,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-342e510d-fbb3-42a0-9a94-bb1698171b4c">
-<span class="eqno">(2)<a class="headerlink" href="#equation-342e510d-fbb3-42a0-9a94-bb1698171b4c" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-41f15cb6-b759-44e2-b906-c8b33da81152">
+<span class="eqno">(2)<a class="headerlink" href="#equation-41f15cb6-b759-44e2-b906-c8b33da81152" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -407,7 +408,7 @@ $$
 $$
 \frac{G\sin (\alpha)}{G\cos (\alpha)} = \frac{N}{M} \rightarrow \tan (\alpha) = \frac{N}{M}
 $$</p>
-<p>So that
+<p>And that
 $$
 \frac{dy}{dt}=G(-\sin (\omega t-\alpha))\omega = aG\cos (\omega t-\alpha) + \cos (\omega t)
 $$
@@ -425,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-43066d71-6e95-495f-9e4c-3682496c7269">
-<span class="eqno">(3)<a class="headerlink" href="#equation-43066d71-6e95-495f-9e4c-3682496c7269" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c8501789-a9dc-4f31-8562-76551f21a5c3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c8501789-a9dc-4f31-8562-76551f21a5c3" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -440,10 +441,24 @@ $$</p>
 </section>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
-<p>Assume q(t) is equal to a constant C, then
-$$
-y(t) = xxx
-$$</p>
+<p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ed64742-1430-483f-91ac-36909efed13a">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2ed64742-1430-483f-91ac-36909efed13a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
+&amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
+&amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
+&amp;=&amp; y(0)e^{at} + (\frac{C}{a}e^{at}-\frac{C}{a}) \\
+&amp;=&amp; y(0)e^{at} + \frac{C}{a}(e^{at}-1) \\
+&amp;=&amp; y(0)e^{at} - y_{\infty}e^{at} + y_{\infty} \\
+&amp;\rightarrow&amp; y(t) - y_{infty} = e^{at}(y(0)-y_{infty})
+\end{eqnarray}\]</div>
+<ul class="simple">
+<li><p>if a&gt;0 and C.0, then y(t) grows or amplieis IC.</p></li>
+<li><p>if a&lt;0, then y(t) approach = -c/a.</p></li>
+</ul>
+</section>
+<section id="response-to-complex-exponential-input">
+<h2>Response to complex exponential input<a class="headerlink" href="#response-to-complex-exponential-input" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -483,7 +498,7 @@ $$</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week1 - overview of ODEs</p>
+        <p class="prev-next-title">Lecture1 - overview of ODEs</p>
       </div>
     </a>
     <a class="right-next"
@@ -491,7 +506,7 @@ $$</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week3 - integrating factor</p>
+        <p class="prev-next-title">Lecture3 - integrating factor</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -514,6 +529,7 @@ $$</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-oscillating-input">Response to oscillating input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-complex-exponential-input">Response to complex exponential input</a></li>
 </ul>
   </nav></div>
 

@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week6)=
+(lecture6)=
 
-# Week6 - exponential response formula (ERF)
+# Lecture6 - exponential response formula (ERF)
 
 ## The ERF framework
 This method gives us guide to find the nonhomogeneous (particular) solutions for exponential-type forcing or source term.

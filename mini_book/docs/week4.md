@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week4)=
+(lecture4)=
 
-# Week4 -  fundamental equation of mechanics
+# Lecture4 -  fundamental equation of mechanics
 
 \begin{eqnarray*}
 &mx''& = &-kx& - &cx'&\\

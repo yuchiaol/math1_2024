@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week7)=
+(lecture7)=
 
-# Week7 - variation of parameters
+# Lecture7 - variation of parameters
 
 ## The fundamental set of solutions amd Wronskian
 Consider linear ODE:
