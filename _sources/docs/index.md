@@ -105,7 +105,7 @@ $$A = U\Sigma V^{T}$$
 ### Fluid Mechanics:
 - website: [https://www.sciencedirect.com/book/9780124059351/fluid-mechanics](https://www.sciencedirect.com/book/9780124059351/fluid-mechanics)
 
-### Linear Algebra Notes Chi Lok Loi
+### Linear Algebra Notes from Mr Chi Lok Loi
 - website: [https://github.com/BenjaminGor/Intro_to_LinAlg_Earth](https://github.com/BenjaminGor/Intro_to_LinAlg_Earth)
 - pdf: [https://github.com/BenjaminGor/Intro_to_LinAlg_Earth/blob/main/Linear_Algebra_Notes_New.pdf](https://github.com/BenjaminGor/Intro_to_LinAlg_Earth/blob/main/Linear_Algebra_Notes_New.pdf)
 

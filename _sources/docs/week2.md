@@ -97,7 +97,7 @@ $$
 \frac{G\sin (\alpha)}{G\cos (\alpha)} = \frac{N}{M} \rightarrow \tan (\alpha) = \frac{N}{M}
 $$
 
-So that
+And that
 $$
 \frac{dy}{dt}=G(-\sin (\omega t-\alpha))\omega = aG\cos (\omega t-\alpha) + \cos (\omega t)
 $$
@@ -129,11 +129,20 @@ $$
 $$
 
 ## Response to constant input
-Assume q(t) is equal to a constant C, then
-$$
-y(t) = xxx
-$$
+Assume q(t) is equal to a constant C, then the general or complete solution is:
+\begin{eqnarray}
+y(t) &=& y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
+&=& y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
+&=& y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
+&=& y(0)e^{at} + (\frac{C}{a}e^{at}-\frac{C}{a}) \\
+&=& y(0)e^{at} + \frac{C}{a}(e^{at}-1) \\
+&=& y(0)e^{at} - y_{\infty}e^{at} + y_{\infty} \\
+&\rightarrow& y(t) - y_{infty} = e^{at}(y(0)-y_{infty})
+\end{eqnarray}
+- if a>0 and C.0, then y(t) grows or amplieis IC.
+- if a<0, then y(t) approach = -c/a.
 
+## Response to complex exponential input
 
 
 

@@ -9,9 +9,9 @@ kernelspec:
   name: python3
 ---
 
-(week8)=
+(lecture8)=
 
-# Week8 - Columns and rows of matrix A
+# Lecture8 - Columns and rows of matrix A
 
 ## The geometry of linear equations
 Consider the two below equations. We want to solve x and y.
