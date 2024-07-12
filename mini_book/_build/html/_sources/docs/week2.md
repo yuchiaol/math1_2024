@@ -143,6 +143,27 @@ y(t) &=& y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 - if a<0, then y(t) approach = -c/a.
 
 ## Response to complex exponential input
+Consider ODE:
+$$
+\frac{dy_c}{dt} = ay_{c} + \cos (\omega t) + i\sin (\omega t) = ay + e^{i\omega t}
+$$
+
+Let
+$$
+y_{c}(t) = Ye^{i\omega t} \rightarrow i\omega Ye^{i\omega t} = aYe^{i\omega t} + e^{i\omega t}
+\rightarrow i\omega Y - aY = 1 \rightarrow Y = \frac{1}{i\omega -a}
+$$
+
+We use polar form, which is good for multiplication.
+$$
+i\omega -a = re^{i\alpha} = \sqrt{a^{2}+\omega^{2}}e^{i\alpha}
+$$
+$$
+\rightarrow y_{c}(t) = \frac{1}{i\omega -a}e^{i\omega t} = \frac{1}{\sqrt{a^{2}+\omega^{2}}}e^{-i\alpha}e^{i\omega t} = \frac{1}{\sqrt{a^{2}+\omega^{2}}}e^{i(\omega t-\alpha)}
+$$
+$$
+\tan \alpha = \frac{-\omega}{a}
+$$
 
 
 

@@ -44,7 +44,7 @@ This course gives students an overview of first and second order linear ordinary
 - <span style="color:red">Week7</span>: xxx
 - <span style="color:red">Week8</span>: xxx
 
-## <span style="color:red">Week8</span> midterm exam
+### <span style="color:red">Week8</span> midterm exam
 
 ### Linear algebra:
 - <span style="color:red">Week9</span>: row and column view of matrix multiplication, independence, basis, and dimension
