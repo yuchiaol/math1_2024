@@ -336,8 +336,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32f2a4a3-d9ea-44a0-ae3e-4075fcfd6aea">
-<span class="eqno">(1)<a class="headerlink" href="#equation-32f2a4a3-d9ea-44a0-ae3e-4075fcfd6aea" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-3a0419cd-a4dc-4b9e-b947-db2738cb2b67">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3a0419cd-a4dc-4b9e-b947-db2738cb2b67" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -374,8 +374,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41f15cb6-b759-44e2-b906-c8b33da81152">
-<span class="eqno">(2)<a class="headerlink" href="#equation-41f15cb6-b759-44e2-b906-c8b33da81152" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-e13bf8fb-19ab-4241-b6eb-d3c49428a905">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e13bf8fb-19ab-4241-b6eb-d3c49428a905" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -426,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8501789-a9dc-4f31-8562-76551f21a5c3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c8501789-a9dc-4f31-8562-76551f21a5c3" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-ac72545d-3bc7-4afb-88a3-239095be1dba">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ac72545d-3bc7-4afb-88a3-239095be1dba" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -442,8 +442,8 @@ $$</p>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
 <p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ed64742-1430-483f-91ac-36909efed13a">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2ed64742-1430-483f-91ac-36909efed13a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-afca4c08-8612-48a4-b36e-94a5e9c243bb">
+<span class="eqno">(4)<a class="headerlink" href="#equation-afca4c08-8612-48a4-b36e-94a5e9c243bb" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
@@ -459,6 +459,25 @@ y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 </section>
 <section id="response-to-complex-exponential-input">
 <h2>Response to complex exponential input<a class="headerlink" href="#response-to-complex-exponential-input" title="Permalink to this heading">#</a></h2>
+<p>Consider ODE:
+$$
+\frac{dy_c}{dt} = ay_{c} + \cos (\omega t) + i\sin (\omega t) = ay + e^{i\omega t}
+$$</p>
+<p>Let
+$$
+y_{c}(t) = Ye^{i\omega t} \rightarrow i\omega Ye^{i\omega t} = aYe^{i\omega t} + e^{i\omega t}
+\rightarrow i\omega Y - aY = 1 \rightarrow Y = \frac{1}{i\omega -a}
+$$</p>
+<p>We use polar form, which is good for multiplication.
+$$
+i\omega -a = re^{i\alpha} = \sqrt{a^{2}+\omega^{2}}e^{i\alpha}
+$$
+$$
+\rightarrow y_{c}(t) = \frac{1}{i\omega -a}e^{i\omega t} = \frac{1}{\sqrt{a^{2}+\omega^{2}}}e^{-i\alpha}e^{i\omega t} = \frac{1}{\sqrt{a^{2}+\omega^{2}}}e^{i(\omega t-\alpha)}
+$$
+$$
+\tan \alpha = \frac{-\omega}{a}
+$$</p>
 </section>
 </section>
 
