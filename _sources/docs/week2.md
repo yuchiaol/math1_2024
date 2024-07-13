@@ -165,5 +165,46 @@ $$
 \tan \alpha = \frac{-\omega}{a}
 $$
 
+The real part of the solution is:
+$$
+y(t) = \frac{1}{\sqrt{a^{2}+\omega^{2}}}\cos (\omega t - \alpha) = G\cos (\omega t - \alpha)
+$$
+We call G "gain".
+
+Let's summarize the logic and steps solving complex ODEs. We want to solve
+$$
+\frac{dy}{dt} = ay + A\cos (\omega t) + B\sin (\omega t).
+$$
+
+1. complexify the ODE to (real to complex):
+$$
+y_{c}' -ay_{c} = Re^{i(\omega t-\phi)}
+$$
+
+2. solve the complex solution:
+$$
+y_{c} = \frac{R}{i\omega - a}e^{i(\omega t-\phi)} = RGe^{i(\omega t-\phi-\alpha)}
+$$
+
+3. the real part of the complex solution is the desired read solution (complex to real):
+$$y = \Re{(y_c)}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
