@@ -336,8 +336,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a0419cd-a4dc-4b9e-b947-db2738cb2b67">
-<span class="eqno">(1)<a class="headerlink" href="#equation-3a0419cd-a4dc-4b9e-b947-db2738cb2b67" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-293e3766-a6e6-46aa-a7cd-c06aa482c953">
+<span class="eqno">(1)<a class="headerlink" href="#equation-293e3766-a6e6-46aa-a7cd-c06aa482c953" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -374,8 +374,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e13bf8fb-19ab-4241-b6eb-d3c49428a905">
-<span class="eqno">(2)<a class="headerlink" href="#equation-e13bf8fb-19ab-4241-b6eb-d3c49428a905" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-f70cf660-b85a-4b7a-ab6b-272331b50a15">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f70cf660-b85a-4b7a-ab6b-272331b50a15" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -426,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ac72545d-3bc7-4afb-88a3-239095be1dba">
-<span class="eqno">(3)<a class="headerlink" href="#equation-ac72545d-3bc7-4afb-88a3-239095be1dba" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c80c2e61-b729-4fc3-8fe2-1f886bb50e2f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c80c2e61-b729-4fc3-8fe2-1f886bb50e2f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -442,8 +442,8 @@ $$</p>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
 <p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-afca4c08-8612-48a4-b36e-94a5e9c243bb">
-<span class="eqno">(4)<a class="headerlink" href="#equation-afca4c08-8612-48a4-b36e-94a5e9c243bb" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-d9026811-9445-4b5c-be87-c1a4f8e70871">
+<span class="eqno">(4)<a class="headerlink" href="#equation-d9026811-9445-4b5c-be87-c1a4f8e70871" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
@@ -478,6 +478,27 @@ $$
 $$
 \tan \alpha = \frac{-\omega}{a}
 $$</p>
+<p>The real part of the solution is:
+$$
+y(t) = \frac{1}{\sqrt{a^{2}+\omega^{2}}}\cos (\omega t - \alpha) = G\cos (\omega t - \alpha)
+$$
+We call G “gain”.</p>
+<p>Let’s summarize the logic and steps solving complex ODEs. We want to solve
+$$
+\frac{dy}{dt} = ay + A\cos (\omega t) + B\sin (\omega t).
+$$</p>
+<ol class="arabic simple">
+<li><p>complexify the ODE to (real to complex):
+$$
+y_{c}’ -ay_{c} = Re^{i(\omega t-\phi)}
+$$</p></li>
+<li><p>solve the complex solution:
+$$
+y_{c} = \frac{R}{i\omega - a}e^{i(\omega t-\phi)} = RGe^{i(\omega t-\phi-\alpha)}
+$$</p></li>
+<li><p>the real part of the complex solution is the desired read solution (complex to real):
+$$y = \Re{(y_c)}$$</p></li>
+</ol>
 </section>
 </section>
 
