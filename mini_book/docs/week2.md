@@ -44,8 +44,8 @@ y_{vp} = \int_{0}^{t}e^{a(t-x)}e^{sx}dx = e^{at}\int_{0}^{t}e^{(s-a)x}dx = e^{at
  \verb|\||^{x=t}_{x=0} \
 =\frac{e^{st}-e^{at}}{s-a}
 $$
-````{prf:example}
-:label: my-example_exp_response1
+
+```{note}
 If s=a, then the resonance occurs.
 What is the solution? How can we get the solution?
 We can use L'Hospital's rule:
@@ -53,7 +53,8 @@ $$
 \lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)} 
 = \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
 $$
-````
+```
+
 ## Response to oscillating input
 
 Consider an ODE:
@@ -189,11 +190,64 @@ $$
 3. the real part of the complex solution is the desired read solution (complex to real):
 $$y = \Re{(y_c)}$$
 
+Now let's reframe the problem and solve the ODE:
+$$
+\frac{dy}{dt} = ay + \cos (\omega t), y(0)=y_{0}
+$$
 
+1. homogeneous solution
+$$
+y_{h}(t) = Ae^{at} = y_{0}e^{at}
+$$
 
+2. particular solution. Consider complex solution:
+$$
+y_{p}(t) = \Re{(y_{c}(t))} =  \Re{(Be^{i\omega t})}
+$$
+$$
+\rightarrow i\omega Be^{i\omega t} = aBe^{i\omega t} + e^{i\omega t}
+$$
+$$
+\rightarrow B(i\omega -a) = 1 \rightarrow B=\frac{1}{i\omega -a}
+$$
 
+Use polar form:
+$$
+\rightarrow i\omega -a = re^{i\alpha} = \sqrt{\omega^{2}+a^{2}}e^{i\alpha}
+$$
 
+$$
+\rightarrow B=\frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{-i\alpha}
+$$
 
+$$
+y_{c} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{-i\alpha}e^{i\omega t} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{i(\omega t-\alpha)} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}(\cos (\omega t-\alpha)+i\sin (\omega t-\alpha))
+$$
+
+$$
+y_{p} = \Re(y_c) =  \frac{1}{\sqrt{\omega^{2}+a^{2}}}\cos (\omega t-\alpha)
+= \frac{1}{\sqrt{\omega^{2}+a^{2}}}(\cos (\omega t)\cos (\alpha) + \sin (\omega t)\sin (\alpha))
+$$
+
+As
+$$
+\cos (\alpha) = \frac{-a}{\sqrt{\omega^{2}+a^{2}}}
+$$
+$$
+\sin (\alpha) = \frac{\omega}{\sqrt{\omega^{2}+a^{2}}}
+$$
+
+So 
+$$
+y_{p} = \frac{-a}{\omega^{2}+a^2}\cos (\omega t) + \frac{\omega}{\omega^{2}+a^2}\sin (\omega t)
+$$
+
+3. complete solution
+$$
+y = y_{0}e^{at} - \frac{a}{\omega^{2}+a^2}\cos (\omega t) + \frac{\omega}{\omega^{2}+a^2}\sin (\omega t)
+$$
+
+## Response to step function and delta function inputs
 
 
 

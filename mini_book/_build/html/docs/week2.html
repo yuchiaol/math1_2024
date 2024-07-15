@@ -320,6 +320,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-complex-exponential-input">Response to complex exponential input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-step-function-and-delta-function-inputs">Response to step function and delta function inputs</a></li>
 </ul>
             </nav>
         </div>
@@ -336,8 +337,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-293e3766-a6e6-46aa-a7cd-c06aa482c953">
-<span class="eqno">(1)<a class="headerlink" href="#equation-293e3766-a6e6-46aa-a7cd-c06aa482c953" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c6ded787-1a2a-4d90-8017-89b0ac5baedf">
+<span class="eqno">(1)<a class="headerlink" href="#equation-c6ded787-1a2a-4d90-8017-89b0ac5baedf" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -359,9 +360,8 @@ y_{vp} = \int_{0}^{t}e^{a(t-x)}e^{sx}dx = e^{at}\int_{0}^{t}e^{(s-a)x}dx = e^{at
 \verb|||^{x=t}_{x=0} <br />
 =\frac{e^{st}-e^{at}}{s-a}
 $$</p>
-<div class="proof example admonition" id="my-example_exp_response1">
-<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
-<section class="example-content" id="proof-content">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If s=a, then the resonance occurs.
 What is the solution? How can we get the solution?
 We can use L’Hospital’s rule:
@@ -369,13 +369,13 @@ $$
 \lim_{s\rightarrow a} \frac{\frac{d}{ds}(e^{st}-e^{at})}{\frac{d}{ds}(s-a)}
 = \lim_{s\rightarrow a} \frac{te^{st}}{1} = te^{at}
 $$</p>
+</div>
 </section>
-</div></section>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f70cf660-b85a-4b7a-ab6b-272331b50a15">
-<span class="eqno">(2)<a class="headerlink" href="#equation-f70cf660-b85a-4b7a-ab6b-272331b50a15" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-6ce769f0-df25-443d-8852-9441c3e3606a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6ce769f0-df25-443d-8852-9441c3e3606a" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -426,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c80c2e61-b729-4fc3-8fe2-1f886bb50e2f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c80c2e61-b729-4fc3-8fe2-1f886bb50e2f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-0772f3a3-d294-4167-bc79-9c89c050a1a3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-0772f3a3-d294-4167-bc79-9c89c050a1a3" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -442,8 +442,8 @@ $$</p>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
 <p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9026811-9445-4b5c-be87-c1a4f8e70871">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d9026811-9445-4b5c-be87-c1a4f8e70871" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-9a70ddeb-31eb-4bcb-a61e-e6bbf91abf91">
+<span class="eqno">(4)<a class="headerlink" href="#equation-9a70ddeb-31eb-4bcb-a61e-e6bbf91abf91" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
@@ -499,6 +499,60 @@ $$</p></li>
 <li><p>the real part of the complex solution is the desired read solution (complex to real):
 $$y = \Re{(y_c)}$$</p></li>
 </ol>
+<p>Now let’s reframe the problem and solve the ODE:
+$$
+\frac{dy}{dt} = ay + \cos (\omega t), y(0)=y_{0}
+$$</p>
+<ol class="arabic simple">
+<li><p>homogeneous solution
+$$
+y_{h}(t) = Ae^{at} = y_{0}e^{at}
+$$</p></li>
+<li><p>particular solution. Consider complex solution:
+$$
+y_{p}(t) = \Re{(y_{c}(t))} =  \Re{(Be^{i\omega t})}
+$$
+$$
+\rightarrow i\omega Be^{i\omega t} = aBe^{i\omega t} + e^{i\omega t}
+$$
+$$
+\rightarrow B(i\omega -a) = 1 \rightarrow B=\frac{1}{i\omega -a}
+$$</p></li>
+</ol>
+<p>Use polar form:
+$$
+\rightarrow i\omega -a = re^{i\alpha} = \sqrt{\omega^{2}+a^{2}}e^{i\alpha}
+$$</p>
+<p>$$
+\rightarrow B=\frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{-i\alpha}
+$$</p>
+<p>$$
+y_{c} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{-i\alpha}e^{i\omega t} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}e^{i(\omega t-\alpha)} = \frac{1}{\sqrt{\omega^{2}+a^{2}}}(\cos (\omega t-\alpha)+i\sin (\omega t-\alpha))
+$$</p>
+<p>$$
+y_{p} = \Re(y_c) =  \frac{1}{\sqrt{\omega^{2}+a^{2}}}\cos (\omega t-\alpha)
+= \frac{1}{\sqrt{\omega^{2}+a^{2}}}(\cos (\omega t)\cos (\alpha) + \sin (\omega t)\sin (\alpha))
+$$</p>
+<p>As
+$$
+\cos (\alpha) = \frac{-a}{\sqrt{\omega^{2}+a^{2}}}
+$$
+$$
+\sin (\alpha) = \frac{\omega}{\sqrt{\omega^{2}+a^{2}}}
+$$</p>
+<p>So
+$$
+y_{p} = \frac{-a}{\omega^{2}+a^2}\cos (\omega t) + \frac{\omega}{\omega^{2}+a^2}\sin (\omega t)
+$$</p>
+<ol class="arabic simple" start="3">
+<li><p>complete solution
+$$
+y = y_{0}e^{at} - \frac{a}{\omega^{2}+a^2}\cos (\omega t) + \frac{\omega}{\omega^{2}+a^2}\sin (\omega t)
+$$</p></li>
+</ol>
+</section>
+<section id="response-to-step-function-and-delta-function-inputs">
+<h2>Response to step function and delta function inputs<a class="headerlink" href="#response-to-step-function-and-delta-function-inputs" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -570,6 +624,7 @@ $$y = \Re{(y_c)}$$</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-for-calculating-very-particular-solution">Formula for calculating very particular solution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-constant-input">Response to constant input</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-complex-exponential-input">Response to complex exponential input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#response-to-step-function-and-delta-function-inputs">Response to step function and delta function inputs</a></li>
 </ul>
   </nav></div>
 
