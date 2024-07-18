@@ -337,8 +337,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9e35e15-2033-41a5-b11f-361c75a181c6">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f9e35e15-2033-41a5-b11f-361c75a181c6" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-42172220-03ec-4447-b4e6-38d47c938457">
+<span class="eqno">(1)<a class="headerlink" href="#equation-42172220-03ec-4447-b4e6-38d47c938457" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -374,8 +374,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b6811c0-80c1-4043-9842-f6379a1949ae">
-<span class="eqno">(2)<a class="headerlink" href="#equation-1b6811c0-80c1-4043-9842-f6379a1949ae" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-d7666271-cfdb-4eac-b2b9-738d34de5f10">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d7666271-cfdb-4eac-b2b9-738d34de5f10" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -426,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1066eb6e-ed52-4aff-a251-2b65ed071577">
-<span class="eqno">(3)<a class="headerlink" href="#equation-1066eb6e-ed52-4aff-a251-2b65ed071577" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-76647047-3d99-41f9-85a0-51efa7e654dd">
+<span class="eqno">(3)<a class="headerlink" href="#equation-76647047-3d99-41f9-85a0-51efa7e654dd" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -442,8 +442,8 @@ $$</p>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
 <p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d3d22f6-0504-4749-9b9a-d01916ef3cd6">
-<span class="eqno">(4)<a class="headerlink" href="#equation-8d3d22f6-0504-4749-9b9a-d01916ef3cd6" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-e1463c21-958c-49bf-9e23-71964f0f5a77">
+<span class="eqno">(4)<a class="headerlink" href="#equation-e1463c21-958c-49bf-9e23-71964f0f5a77" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
@@ -557,21 +557,21 @@ $$</p></li>
 <ol class="arabic simple">
 <li><p>ramp function
 $$
-R(t) = 0, t \less 0
+R(t) = 0, t &lt; 0
 $$
 $$
 R(t) = t, t \geq 0
 $$</p></li>
 <li><p>step function
 $$
-H(t) = 0, t \less 0
+H(t) = 0, t &lt; 0
 $$
 $$
 H(t) = 1, t \geq 0
 $$</p></li>
 <li><p>delta function
 $$
-\delta (t) = \infinity, t = 0
+\delta (t) = \infty, t = 0
 $$
 $$
 \delta (0) = 0, t\neq 0
