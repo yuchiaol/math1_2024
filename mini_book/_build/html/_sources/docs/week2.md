@@ -251,21 +251,21 @@ $$
 Let's introduce three interesting functions:
 1. ramp function
 $$
-R(t) = 0, t \less 0
+R(t) = 0, t < 0
 $$
 $$
 R(t) = t, t \geq 0
 $$
 2. step function
 $$
-H(t) = 0, t \less 0
+H(t) = 0, t < 0
 $$
 $$
 H(t) = 1, t \geq 0
 $$
 3. delta function
 $$
-\delta (t) = \infinity, t = 0
+\delta (t) = \infty, t = 0
 $$
 $$
 \delta (0) = 0, t\neq 0
