@@ -248,7 +248,10 @@ y = y_{0}e^{at} - \frac{a}{\omega^{2}+a^2}\cos (\omega t) + \frac{\omega}{\omega
 $$
 
 ## Response to step function and delta function inputs
-
+Let's introduce three interesting functions:
+1. ramp function
+2. step function
+3. delta function
 
 
 
