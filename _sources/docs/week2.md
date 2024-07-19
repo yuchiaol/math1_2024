@@ -268,8 +268,43 @@ $$
 \delta (t) = \infty, t = 0
 $$
 $$
-\delta (0) = 0, t\neq 0
+\delta (t) = 0, t\neq 0
 $$
+
+```{note}
+The derivitive is strange, but integral works. Three properties:
+$$
+\int_{-\infty}^{\infty}\delta (t)dt = H(\infty) - H(-\infty) = 1 - 0 = 1
+$$
+$$
+\int_{-\infty}^{\infty}\delta (t)f(t)dt = f(0)
+$$
+$$
+\int_{-\infty}^{\infty}\delta (t-T)e^{t}dt = e^{T}
+$$
+```
+
+Let's consider the ODE with delta function input:
+$$
+\frac{dy}{dt} = ay + \delta (t-T)
+$$
+
+Homogeneous solution:
+$$
+y_{h}(t) = y(0)e^{at}
+$$
+
+We use "the formula" to calculate the (very) particular solution:
+$$
+y_{p}(t) = e^{at}\int_{s=0}^{s=t}e^{-as}\delta (s-T)ds = e^{at}e^{-aT} = e^{a(t-T)}
+$$
+
+So the complete solution is:
+$$
+y(t) = y(o)e^{at} + e^{a(t-T)}
+$$
+
+Is this the solution when t=0? How could you modify the solution?
 
 
 
