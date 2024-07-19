@@ -337,8 +337,8 @@ document.write(`
 <section id="response-to-exponential-input">
 <h2>Response to exponential input<a class="headerlink" href="#response-to-exponential-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42172220-03ec-4447-b4e6-38d47c938457">
-<span class="eqno">(1)<a class="headerlink" href="#equation-42172220-03ec-4447-b4e6-38d47c938457" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-172dd66c-f1a3-4a81-ac20-94aa1c2bfb14">
+<span class="eqno">(1)<a class="headerlink" href="#equation-172dd66c-f1a3-4a81-ac20-94aa1c2bfb14" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+e^{st},
 \end{eqnarray}\]</div>
 <p>where a and s are known. We call y(t) the “exponential response” and exponential term on right hand side the “input” or “forcing”.</p>
@@ -374,8 +374,8 @@ $$</p>
 <section id="response-to-oscillating-input">
 <h2>Response to oscillating input<a class="headerlink" href="#response-to-oscillating-input" title="Permalink to this heading">#</a></h2>
 <p>Consider an ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7666271-cfdb-4eac-b2b9-738d34de5f10">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d7666271-cfdb-4eac-b2b9-738d34de5f10" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-f7a2cb62-9532-4b5f-a9c2-13dcdcb40f71">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f7a2cb62-9532-4b5f-a9c2-13dcdcb40f71" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt}=ay+\cos (\omega t), y(0) = y_{0},
 \end{eqnarray}\]</div>
 <p>We look for particular solution (we already know homogeneours solution, right?) in the form of:
@@ -426,8 +426,8 @@ $$
 \frac{dy}{dt} = ay + q(t),
 $$
 where q(t) is the input.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76647047-3d99-41f9-85a0-51efa7e654dd">
-<span class="eqno">(3)<a class="headerlink" href="#equation-76647047-3d99-41f9-85a0-51efa7e654dd" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-0de9e677-a86d-483f-aa12-aadaa2eef125">
+<span class="eqno">(3)<a class="headerlink" href="#equation-0de9e677-a86d-483f-aa12-aadaa2eef125" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y_{vp}(t) = \int_{s=0}^{s=t}e^{a(t-s)}q(s)ds = e^{at}\int_{s=0}^{s=t}e^{-as}q(s)ds
 \end{eqnarray}\]</div>
 <p>And the general or complete solution is	
@@ -442,8 +442,8 @@ $$</p>
 <section id="response-to-constant-input">
 <h2>Response to constant input<a class="headerlink" href="#response-to-constant-input" title="Permalink to this heading">#</a></h2>
 <p>Assume q(t) is equal to a constant C, then the general or complete solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1463c21-958c-49bf-9e23-71964f0f5a77">
-<span class="eqno">(4)<a class="headerlink" href="#equation-e1463c21-958c-49bf-9e23-71964f0f5a77" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-db92f9e1-b9d3-4ea2-bc4f-16eed7bad899">
+<span class="eqno">(4)<a class="headerlink" href="#equation-db92f9e1-b9d3-4ea2-bc4f-16eed7bad899" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 y(t) &amp;=&amp; y(0)e^{at} + e^{at}\int_{s=0}^{s=t}e^{-as}Cds\\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})e^{-as}\verb|||^{s=t}_{s=0} \\
 &amp;=&amp; y(0)e^{at} + Ce^{at}(\frac{-1}{a})(e^{-at}-1) \\
@@ -574,9 +574,39 @@ $$
 \delta (t) = \infty, t = 0
 $$
 $$
-\delta (0) = 0, t\neq 0
+\delta (t) = 0, t\neq 0
 $$</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The derivitive is strange, but integral works. Three properties:
+$$
+\int_{-\infty}^{\infty}\delta (t)dt = H(\infty) - H(-\infty) = 1 - 0 = 1
+$$
+$$
+\int_{-\infty}^{\infty}\delta (t)f(t)dt = f(0)
+$$
+$$
+\int_{-\infty}^{\infty}\delta (t-T)e^{t}dt = e^{T}
+$$</p>
+</div>
+<p>Let’s consider the ODE with delta function input:
+$$
+\frac{dy}{dt} = ay + \delta (t-T)
+$$</p>
+<p>Homogeneous solution:
+$$
+y_{h}(t) = y(0)e^{at}
+$$</p>
+<p>We use “the formula” to calculate the (very) particular solution:
+$$
+y_{p}(t) = e^{at}\int_{s=0}^{s=t}e^{-as}\delta (s-T)ds = e^{at}e^{-aT} = e^{a(t-T)}
+$$</p>
+<p>So the complete solution is:
+$$
+y(t) = y(o)e^{at} + e^{a(t-T)}
+$$</p>
+<p>Is this the solution when t=0? How could you modify the solution?</p>
 </section>
 </section>
 
