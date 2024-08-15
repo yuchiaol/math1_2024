@@ -62,7 +62,7 @@ $$A = X\Lambda X^{T}$$
 - <span style="color:red">Week13 (11/25 & 11/27)</span>: singular value decomposition (SVD): 
 $$A = U\Sigma V^{T}$$
 
-### Numerical nethods for linear algebra:
+### Numerical methods for linear algebra:
 - <span style="color:red">Week14 (12/2 & 12/4)</span>: numerical linear algebra1 and 2
 
 ### Solving linear system:
@@ -76,7 +76,7 @@ $$A = U\Sigma V^{T}$$
 - Gauss' theorem
 - Stokes' theorem
 
-### <span style="color:red">Week15 (12/16 & 12/18)</span>: final exam
+### <span style="color:red">Week16 (12/16 & 12/18)</span>: recap and final exam
 
 ## Textbooks and videos
 ### Differential Equations and Linear Algebra:
