@@ -31,42 +31,42 @@ This course gives students an overview of first and second order linear ordinary
 ## Class schedule
 
 ### First-order ODEs:
-- <span style="color:red">Week1</span>: responses to (complex) exponential, oscillating inputs
-- <span style="color:red">Week2</span>: responses to delta and step function inputs, integrating factor
-- <span style="color:red">Week3</span>: separable euqations and exact solution, phase line
+- <span style="color:red">Week1 (9/2 & 9/4)</span>: responses to (complex) exponential, oscillating inputs
+- <span style="color:red">Week2 (9/9 & 9/11)</span>: responses to delta and step function inputs, integrating factor
+- <span style="color:red">Week3 (9/16 & 9/18)</span>: separable euqations and exact solution, phase line
 
 ### Second-order ODEs:
-- <span style="color:red">Week4</span>: fundamental equation of mechanics, forced harmonic motion and unforced damped motion
-- <span style="color:red">Week5</span>: impulse response, exponential response
-- <span style="color:red">Week6</span>: method of undetermined coefficients and variation of parameters
+- <span style="color:red">Week4 (9/23 & 9/25)</span>: fundamental equation of mechanics, forced harmonic motion and unforced damped motion
+- <span style="color:red">Week5 (9/30 & 10/2)</span>: impulse response, exponential response
+- <span style="color:red">Week6 (10/7 & 10/9)</span>: method of undetermined coefficients and variation of parameters
 
 ### Numerical nethods for solving ODE:
-- <span style="color:red">Week7</span>: xxx
-- <span style="color:red">Week8</span>: xxx
+- <span style="color:red">Week7 (10/14 & 10/16)</span>: finite difference, numerical ODE1
+- <span style="color:red">Week8 (10/21 & 10/23)</span>: numerical ODE2
 
-### <span style="color:red">Week8</span> midterm exam
+### <span style="color:red">Week8 (10/23)</span> midterm exam
 
 ### Linear algebra:
-- <span style="color:red">Week9</span>: row and column view of matrix multiplication, independence, basis, and dimension
-- <span style="color:red">Week10</span>: four fundamental subspaces
+- <span style="color:red">Week9 (10/28 & 10/30)</span>: row and column view of matrix multiplication, independence, basis, and dimension
+- <span style="color:red">Week10 (11/4 & 11/6)</span>: four fundamental subspaces
 factorization:
-- <span style="color:red">Week11</span>: CR decomposition and LU decomposition: 
+- <span style="color:red">Week11 (11/11 & 11/13)</span>: CR decomposition and LU decomposition: 
 \begin{eqnarray*}
 A = CR
 \end{eqnarray*}
 $$A = LU$$
-- <span style="color:red">Week12</span>: orthogonalization (Gram-Schmidt) and eigenvalues and diagnolization: 
+- <span style="color:red">Week12 (11/18 & 11/20)</span>: orthogonalization (Gram-Schmidt) and eigenvalues and diagnolization: 
 $$A = QR$$
 $$S = Q\Lambda Q^{T}$$
 $$A = X\Lambda X^{T}$$
-- <span style="color:red">Week13</span>: singular value decomposition (SVD): 
+- <span style="color:red">Week13 (11/25 & 11/27)</span>: singular value decomposition (SVD): 
 $$A = U\Sigma V^{T}$$
 
 ### Numerical nethods for linear algebra:
-- <span style="color:red">Week14</span>: xxx
+- <span style="color:red">Week14 (12/2 & 12/4)</span>: numerical linear algebra1 and 2
 
 ### Solving linear system:
-- <span style="color:red">Week15</span>: matrix exponential, and plane: source, sink, saddle
+- <span style="color:red">Week15 (12/9 & 12/11)</span>: matrix exponential, and plane: source, sink, saddle
 
 ### Vector calculus and tensor (Week 15? or distributed to each week?)
 - definition of a vector
@@ -76,7 +76,7 @@ $$A = U\Sigma V^{T}$$
 - Gauss' theorem
 - Stokes' theorem
 
-### <span style="color:red">Week15</span>: final exam
+### <span style="color:red">Week15 (12/16 & 12/18)</span>: final exam
 
 ## Textbooks and videos
 ### Differential Equations and Linear Algebra:
