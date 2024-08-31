@@ -15,8 +15,13 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Time: Monday 3,4 (10:20 am - 12:10) and Wednesday 6,7 (1:20 pm - 3:10 pm) 
 - Place: 大氣B105 
 - Requirements: basic knowledge in calculus and programming skills
-- Office hours: by appointment
+- Office hours: TA office hour (Wednesday 12:00-1:20 pm) or by appointment
 - Grading (100%): homework assignments (50%); final exam (25%); midterm exam (20%); class interaction (5%)
+- Homework assignments:
+1. Homework due is every Wednesday at 1:20 pm.
+2. 50% off before Wednesday’s class ends at 15:10 pm.
+3. No credit after Wednesday's class.
+4. 借別人參考的作業也強制適用以上規則！
 - Course website: [here](https://yuchiaol.github.io/math1_2024/docs/index.html) 
 
 ## Teaching assistants
