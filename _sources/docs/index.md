@@ -14,6 +14,7 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Credit: 4
 - Time: Monday 3,4 (10:20 am - 12:10) and Wednesday 6,7 (1:20 pm - 3:10 pm) 
 - Place: 大氣B105 
+- Co-teach with Prof. Min-Hui Lo
 - Requirements: basic knowledge in calculus and programming skills
 - Office hours: TA office hour (Wednesday 12:00-1:20 pm) or by appointment
 - Grading (100%): homework assignments (50%); final exam (25%); midterm exam (20%); class interaction (5%)
