@@ -16,7 +16,7 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Place: 大氣B105 
 - Co-teach with Prof. Min-Hui Lo
 - Requirements: basic knowledge in calculus and programming skills
-- Office hours: TA office hour (Wednesday 12:00-1:20 pm at B202) or by appointment
+- Office hours: TA office hour (Wednesday 12:00-1:20 pm at B105) or by appointment
 - Grading (100%): homework assignments (50%); final exam (25%); midterm exam (20%); class interaction (5%)
 - Homework assignments:
 1. Homework due is every Wednesday at 1:20 pm.
