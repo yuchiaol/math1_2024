@@ -83,3 +83,35 @@ In engineering school or discipline, people use different notations.
 
 We call them [general solution] and [particular solution], respectively.
 ```
+
+````{prf:example}
+Using integrating factor to solve
+$$
+t\frac{dy}{dt}-y=t^{3}
+$$
+
+1. $$\frac{dy}{dt}-\frac{1}{t}y = t^{2} \rightarrow \frac{dy}{dt} = \frac{1}{t}y +  t^{2}$$
+
+2. integrating factor: $$e^{-\int \frac{1}{t}dt} = e^{-ln(t)} = \frac{1}{t}$$ 
+
+3. $$\frac{1}{t}\frac{dy}{dt} - \frac{1}{t^2}y = t $$
+
+4. $$\frac{d\frac{y}{t}}{dt} = t \rightarrow \frac{y}{t} = \frac{1}{2}t^{2}+C \rightarrow y=\frac{t^3}{2}+Ct$$
+
+Use initial condition to get C.
+
+
+
+
+
+
+
+````
+
+
+
+
+
+
+
+
