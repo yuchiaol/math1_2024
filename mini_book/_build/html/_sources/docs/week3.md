@@ -12,5 +12,74 @@ kernelspec:
 (lecture3)=
 
 # Lecture3 - integrating factor
+Consider the first-order ODE:
+
+\begin{eqnarray}
+\frac{dy}{dt} = a(t)y + q(t).
+\end{eqnarray}
+
+Note that now a is a function of t. We solve it by an integrating factor M (M(0)=1):
+
+$$
+\frac{dM}{dt} = -a(t)M.
+$$
+
+If a is a constant, then
+$$
+M = e^{-at}.
+$$
+
+If a is a function of t, then
+$$
+M = e^{-\int_{0}^{t}a(s)ds}.
+$$
+
+The idea is to consider My and make it in the form of a total derivative:
+$$
+\frac{dMy}{dt} = \frac{dy}{dt}M - a(t)My = Mq
+$$
+
+Integrate both side from 0 to t, we can get:
+$$
+M(t)y(t) - M(0)y(0) = \int^{t}_{0} M(s)q(s)ds
+$$
+
+$$
+\rightarrow M(t)y(t) = y(0) + \int^{t}_{0} M(s)q(s)ds
+$$
+
+Divided by M on both sides:
+$$
+y(t) = y(0)e^{\int^{t}_{0} a(s)ds} + \frac{\int^{t}_0{M(s)q(s)ds}}{e^{-\int^{t}_0{a(s)ds}}}
+$$
+
+$$
+\rightarrow y(t) = y(0)e^{\int^{t}_{0} a(s)ds} + \int^{t}_0{e^{-\int^{s}_0{a(T)dT}}q(s)ds}\cdot e^{\int^{t}_0{a(k)dk}}
+$$
+
+$$
+\rightarrow y(t) = y(0)e^{\int^{t}_{0} a(s)ds} + \int^{t}_0{e^{\int^{t}_0{a(k)dk - \int^{s}_0{a(T)dT}}}q(s)ds}
+$$
+
+```{note}
+If a is a constant, above equation gives "the formula" for very particular solution:
+$$
+y_{vp}(t) = \int^{t}_0{e^{a(t-s)}q(s)ds}
+$$
+
+And the complete solution is:
+$$
+y(t) = y(0)e^{at} + \int^{t}_0{e^{a(t-s)}q(s)ds}
+$$
 
 
+```
+
+
+```{note}
+In engineering school or discipline, people use different notations.
+ 
+"Geometrically, the general solution of an ODE is a family of infinitely many solution curves, one for each value of the constant c. If we choose a specific c, we obtain what is called a particular solution of the ODE. A particular solution does not contain any arbitrary constants." from Advanced Engineering Mathematics by Erwin Kreyszig.
+
+We call them [general solution] and [particular solution], respectively.
+```
