@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture3 - integrating factor &#8212; NTUAS ODE and Linear Algebra</title>
+    <title>Lecture3 - integrating factor, separable equations, and exact solution, &#8212; NTUAS ODE and Linear Algebra</title>
   
   
   
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="week1.html">Lecture1 - overview of ODEs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week2.html">Lecture2 - responses to inputs &amp; complexify</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture3 - integrating factor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture3 - integrating factor, separable equations, and exact solution,</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week4.html">Lecture4 -  fundamental equation of mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week5.html">Lecture5 - method of undetermined coefficients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week6.html">Lecture6 - exponential response formula (ERF)</a></li>
@@ -292,7 +292,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -303,11 +305,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture3 - integrating factor</h1>
+    <h1>Lecture3 - integrating factor, separable equations, and exact solution,</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-factor">Integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution">Exact solution</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -317,11 +329,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="lecture3-integrating-factor">
-<span id="lecture3"></span><h1>Lecture3 - integrating factor<a class="headerlink" href="#lecture3-integrating-factor" title="Permalink to this heading">#</a></h1>
+  <section id="lecture3-integrating-factor-separable-equations-and-exact-solution">
+<span id="lecture3"></span><h1>Lecture3 - integrating factor, separable equations, and exact solution,<a class="headerlink" href="#lecture3-integrating-factor-separable-equations-and-exact-solution" title="Permalink to this heading">#</a></h1>
+<section id="integrating-factor">
+<h2>Integrating factor<a class="headerlink" href="#integrating-factor" title="Permalink to this heading">#</a></h2>
 <p>Consider the first-order ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c63c7ee0-f1e8-4551-bbce-3e5798176b1e">
-<span class="eqno">(5)<a class="headerlink" href="#equation-c63c7ee0-f1e8-4551-bbce-3e5798176b1e" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-9350eb9f-5575-45ee-b592-a48d45231b44">
+<span class="eqno">(5)<a class="headerlink" href="#equation-9350eb9f-5575-45ee-b592-a48d45231b44" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt} = a(t)y + q(t).
 \end{eqnarray}\]</div>
 <p>Note that now a is a function of t. We solve it by an integrating factor M (M(0)=1):</p>
@@ -382,14 +396,29 @@ $$
 t\frac{dy}{dt}-y=t^{3}
 $$</p>
 <ol class="arabic simple">
-<li><p>$$\frac{dy}{dt}-\frac{1}{t}y = t^{2} \rightarrow \frac{dy}{dt} = \frac{1}{t}y +  t^{2}$$</p></li>
-<li><p>integrating factor: $$e^{-\int \frac{1}{t}dt} = e^{-ln(t)} = \frac{1}{t}$$</p></li>
-<li><p>$$\frac{1}{t}\frac{dy}{dt} - \frac{1}{t^2}y = t $$</p></li>
-<li><p>$$\frac{d\frac{y}{t}}{dt} = t \rightarrow \frac{y}{t} = \frac{1}{2}t^{2}+C \rightarrow y=\frac{t^3}{2}+Ct$$</p></li>
+<li><p>Rearrange equation: $$\frac{dy}{dt}-\frac{1}{t}y = t^{2} \rightarrow \frac{dy}{dt} = \frac{1}{t}y +  t^{2}$$</p></li>
+<li><p>Integrating factor: M(t) = $$e^{-\int \frac{1}{t}dt} = e^{-ln(t)} = \frac{1}{t}$$</p></li>
+<li><p>Rearrange equation: $$\frac{1}{t}\frac{dy}{dt} - \frac{1}{t^2}y = t $$</p></li>
+<li><p>Take integration: $$\frac{d\frac{y}{t}}{dt} = t \rightarrow \frac{y}{t} = \frac{1}{2}t^{2}+C \rightarrow y=\frac{t^3}{2}+Ct$$</p></li>
 </ol>
 <p>Use initial condition to get C.</p>
 </section>
 </div></section>
+<section id="separable-equations">
+<h2>Separable equations<a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
+<p>Consider ODE in the form:</p>
+<p>$$
+\frac{dy}{dt} = \frac{g(t)}{f(y)}
+$$</p>
+</section>
+<section id="exact-solution">
+<h2>Exact solution<a class="headerlink" href="#exact-solution" title="Permalink to this heading">#</a></h2>
+<p>Consider ODE in the form:
+$$
+\frac{dy}{dt} = \frac{g(y,t)}{f(y,t)}
+$$</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -445,6 +474,22 @@ $$</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrating-factor">Integrating factor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#separable-equations">Separable equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution">Exact solution</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

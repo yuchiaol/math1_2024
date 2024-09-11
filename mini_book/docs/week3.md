@@ -11,7 +11,9 @@ kernelspec:
 
 (lecture3)=
 
-# Lecture3 - integrating factor
+# Lecture3 - integrating factor, separable equations, and exact solution, 
+
+## Integrating factor
 Consider the first-order ODE:
 
 \begin{eqnarray}
@@ -90,26 +92,31 @@ $$
 t\frac{dy}{dt}-y=t^{3}
 $$
 
-1. $$\frac{dy}{dt}-\frac{1}{t}y = t^{2} \rightarrow \frac{dy}{dt} = \frac{1}{t}y +  t^{2}$$
+1. Rearrange equation: $$\frac{dy}{dt}-\frac{1}{t}y = t^{2} \rightarrow \frac{dy}{dt} = \frac{1}{t}y +  t^{2}$$
 
-2. integrating factor: $$e^{-\int \frac{1}{t}dt} = e^{-ln(t)} = \frac{1}{t}$$ 
+2. Integrating factor: M(t) = $$e^{-\int \frac{1}{t}dt} = e^{-ln(t)} = \frac{1}{t}$$ 
 
-3. $$\frac{1}{t}\frac{dy}{dt} - \frac{1}{t^2}y = t $$
+3. Rearrange equation: $$\frac{1}{t}\frac{dy}{dt} - \frac{1}{t^2}y = t $$
 
-4. $$\frac{d\frac{y}{t}}{dt} = t \rightarrow \frac{y}{t} = \frac{1}{2}t^{2}+C \rightarrow y=\frac{t^3}{2}+Ct$$
+4. Take integration: $$\frac{d\frac{y}{t}}{dt} = t \rightarrow \frac{y}{t} = \frac{1}{2}t^{2}+C \rightarrow y=\frac{t^3}{2}+Ct$$
 
 Use initial condition to get C.
 
-
-
-
-
-
-
 ````
 
+## Separable equations
+Consider ODE in the form:
+
+$$
+\frac{dy}{dt} = \frac{g(t)}{f(y)}
+$$
 
 
+## Exact solution
+Consider ODE in the form:
+$$
+\frac{dy}{dt} = \frac{g(y,t)}{f(y,t)}
+$$
 
 
 
