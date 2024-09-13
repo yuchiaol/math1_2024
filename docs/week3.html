@@ -334,8 +334,8 @@ document.write(`
 <section id="integrating-factor">
 <h2>Integrating factor<a class="headerlink" href="#integrating-factor" title="Permalink to this heading">#</a></h2>
 <p>Consider the first-order ODE:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9350eb9f-5575-45ee-b592-a48d45231b44">
-<span class="eqno">(5)<a class="headerlink" href="#equation-9350eb9f-5575-45ee-b592-a48d45231b44" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-a44a616f-192e-48ee-9da5-540c655f1352">
+<span class="eqno">(5)<a class="headerlink" href="#equation-a44a616f-192e-48ee-9da5-540c655f1352" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 \frac{dy}{dt} = a(t)y + q(t).
 \end{eqnarray}\]</div>
 <p>Note that now a is a function of t. We solve it by an integrating factor M (M(0)=1):</p>
@@ -408,9 +408,27 @@ $$</p>
 <h2>Separable equations<a class="headerlink" href="#separable-equations" title="Permalink to this heading">#</a></h2>
 <p>Consider ODE in the form:</p>
 <p>$$
-\frac{dy}{dt} = \frac{g(t)}{f(y)}
+\frac{dy}{dt} = \frac{g(t)}{f(y)}.
 $$</p>
+<p>Then we can get and solve for y(t):
+$$
+\int_{y(0)}^{y(t)} f(y)dy = \int_{0}^{t}g(s)ds.
+$$</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>$$
+\frac{dy}{dt} = \frac{t}{y} \rightarrow \int_{y(0)}^{y(t)} ydy = \int_{0}^{t}tdt = \frac{1}{2}t^2
+$$</p>
+<p>$$
+\rightarrow \frac{1}{2}y(t)^{2} - \frac{1}{2}y(0)^{2} = \frac{1}{2}t^2
+$$</p>
+<p>$$
+\rightarrow y(t)^{2} = y(0)^{2} + t^{2} \rightarrow y(t) = \pm\sqrt{y(0)^{2} + t^{2}}
+$$</p>
+<p>Note that y(0) allows y=t and y=-t.</p>
 </section>
+</div></section>
 <section id="exact-solution">
 <h2>Exact solution<a class="headerlink" href="#exact-solution" title="Permalink to this heading">#</a></h2>
 <p>Consider ODE in the form:
