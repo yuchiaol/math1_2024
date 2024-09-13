@@ -108,9 +108,30 @@ Use initial condition to get C.
 Consider ODE in the form:
 
 $$
-\frac{dy}{dt} = \frac{g(t)}{f(y)}
+\frac{dy}{dt} = \frac{g(t)}{f(y)}.
 $$
 
+Then we can get and solve for y(t):
+$$
+\int_{y(0)}^{y(t)} f(y)dy = \int_{0}^{t}g(s)ds.
+$$
+
+````{prf:example}
+$$
+\frac{dy}{dt} = \frac{t}{y} \rightarrow \int_{y(0)}^{y(t)} ydy = \int_{0}^{t}tdt = \frac{1}{2}t^2
+$$
+
+$$
+\rightarrow \frac{1}{2}y(t)^{2} - \frac{1}{2}y(0)^{2} = \frac{1}{2}t^2
+$$
+
+$$
+\rightarrow y(t)^{2} = y(0)^{2} + t^{2} \rightarrow y(t) = \pm\sqrt{y(0)^{2} + t^{2}}
+$$
+
+Note that y(0) allows y=t and y=-t.
+
+````
 
 ## Exact solution
 Consider ODE in the form:
