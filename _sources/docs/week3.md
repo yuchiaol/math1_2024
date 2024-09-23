@@ -136,8 +136,88 @@ Note that y(0) allows y=t and y=-t.
 ## Exact solution
 Consider ODE in the form:
 $$
+\frac{dy}{dt} = \frac{g(y,t)}{f(y,t)} \rightarrow f(y,t)dy = g(y,t)dt \rightarrow f(y,t)dy - g(y,t)dt = 0
+$$
+
+The idea is that if we can write and treat y and t independent variables:
+$$
+\frac{\partial \tilde{F}}{\partial y} = f(y,t)
+$$
+$$
+\frac{\partial \tilde{F}}{\partial t} = -g(y,t)
+$$
+The we can have a total deriviative form of this problem and can solve it:
+$$
+D\tilde{F} = \frac{\partial \tilde{F}}{\partial y}dy + \frac{\partial \tilde{F}}{\partial t}dt = 0
+$$
+
+Step 1:
+$$
+\int f(y,t)dy = \tilde{F}(y,t) + \tilde{C}(t) \rightarrow \tilde{F}(y,t) = \int f(y,t)dy + C(t) = F(y,t) + C(t)
+$$
+We let 
+$$
+\int f(y,t)dy = F(y,t)
+$$
+
+
+Step 2, choose C(t) such that:
+$$
+\frac{\partial}{\partial t} (F(y,t)+C(t)) = -g(y,t)
+$$
+
+Step 3:
+$$
 \frac{dy}{dt} = \frac{g(y,t)}{f(y,t)}
 $$
+is solved by
+$$
+F(y,t) + C(t) = constant
+$$
+
+
+````{prf:example}
+$$
+\frac{dy}{dt} = \frac{2yt-1}{y^{2}-t^{2}},
+$$
+$$
+g(y,t) = 2yt-1, f(y,t) = y^{2}-t^{2}
+$$
+
+Step 1:
+$$
+\int fdy = \int y^{2}-t^{2}dy = \frac{1}{3}y^{3}-t^{2}y + C(t)
+$$ 
+
+Step 2:
+$$
+\frac{\partial}{\partial t} (\frac{1}{3}y^{3}-t^{2}y+C(t)) = -2ty + C'(t) = -2yt+1 = -g(y,t)
+$$
+$$
+\rightarrow C'(t) = 1 \rightarrow C(t) = t
+$$
+
+Step 3:
+$$
+\frac{1}{3}y^{3}-t^{2}y+t = constant
+$$
+is a solution in implicit form.
+
+
+
+
+
+
+
+
+````
+
+
+
+
+
+
+
 
 
 
