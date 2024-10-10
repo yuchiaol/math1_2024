@@ -246,9 +246,156 @@ x+2y+z &=& 2 \\\\
 x=2, y=1, z&=&-2
 \end{eqnarray*}
 
+```{note}
+\begin{eqnarray*}
+\begin{bmatrix}
+x & x & x \\
+x & x & x \\
+x & x & x 
+\end{bmatrix}
+\begin{bmatrix}
+3 \\
+4 \\
+5
+\end{bmatrix}
+=3\times column_{1} + 4\times cololumn_{2} + 5\times column_{3}
+\end{eqnarray*}
 
+\begin{eqnarray*}
+\begin{bmatrix}
+1 & 2 & 7
+\end{bmatrix}
+\begin{bmatrix}
+x & x & x \\
+x & x & x \\
+x & x & x
+\end{bmatrix}
+= 1\times row_{1} + 2\times row_{2} + 7\times row_{3}
+\end{eqnarray*}
+```
 
+## Elimination with elementary matrices
+1. substract 3*row1 from row2 
+\begin{eqnarray*}
 
+\underbrace{\begin{bmatrix}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}}_{E_{21}}
 
+\underbrace{\begin{bmatrix}
+1 & 2 & 1 \\
+3 & 8 & 1 \\
+0 & 4 & 1
+\end{bmatrix}}_{A}
 
+=
+
+\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 2 & -2 \\
+0 & 4 & 1
+\end{bmatrix}
+
+\end{eqnarray*}
+
+2. subtract 2*row2 from row3
+\begin{eqnarray*}
+
+\underbrace{\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -2 & 1
+\end{bmatrix}}_{E_{32}}
+
+\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 2 & -2 \\
+0 & 4 & 1
+\end{bmatrix}
+
+\underbrace{\begin{bmatrix}
+1 & 2 & 1 \\
+0 & 2 & -2 \\
+0 & 0 & 5
+\end{bmatrix}}_{U}
+
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\Longrightarrow E_{32}(E_{21}A) = U \Longrightarrow (E_{32}E_{21})A = U
+\end{eqnarray*}
+
+```{note}
+Inverse of elementary matrix
+\begin{eqnarray*}
+
+\underbrace{\begin{bmatrix}
+1 & 0 & 0 \\
+3 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}}_{E_{21}^{-1}}
+
+\underbrace{\begin{bmatrix}
+1 & 0 & 0 \\
+-3 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}}_{E_{21}}
+
+= \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+
+\end{eqnarray*}
+
+```
+
+## Permutation matrices
+
+row operation on the left:
+\begin{eqnarray*}
+
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 
+\end{bmatrix}
+
+\begin{bmatrix}
+a & b \\
+c & d 
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+c & d \\
+a & b 
+\end{bmatrix}
+
+\end{eqnarray*}
+
+column operation on the right:
+\begin{eqnarray*}
+
+\begin{bmatrix}
+a & b \\
+c & d 
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+b & a \\
+d & c
+\end{bmatrix}
+
+\end{eqnarray*}
 
