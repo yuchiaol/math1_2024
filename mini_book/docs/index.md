@@ -26,9 +26,6 @@ and Professor [Steven Strogatz](https://www.stevenstrogatz.com/)'s course materi
 - Course website: [here](https://yuchiaol.github.io/math1_2024/docs/index.html) 
 
 ## Teaching assistants
-- Yih Wang (王逸)
-- Shih-Ni Zhou (周詩倪)
-- Yi-An Feng (馮以安)
 - Ya-Fan Chung (鍾雅帆)
 
 ## Course description
